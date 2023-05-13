@@ -25,9 +25,10 @@ const Navbar = () => {
                                 variant="outlined"
                                 color='inherit'
                                 startIcon={<PlayCircleOutlineIcon color='primary' />}
-                                sx={{ borderRadius: 20, py: 1.1, px: 1.7 }}
+                                sx={{ borderRadius: 20, py: 1.1, px: 1.7, textTransform: 'none' }}
+
                             >
-                                Todos os Projetos
+                                Todos os projetos
                             </Button>
                         </Stack>
                         <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={2}>
