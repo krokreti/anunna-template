@@ -7,7 +7,10 @@ const Home = () => {
             <Grid item xs={5} border={'1px solid green;'}>
                 <Typography variant="h5" fontWeight={'bold'} >Portfólio</Typography>
             </Grid>
-            <Grid item xs={7} border={'1px solid pink;'}>
+            <Grid item xs={1} border={'1px solid grey;'}>
+                <Typography variant="h5">button</Typography>
+            </Grid>
+            <Grid item xs={6} border={'1px solid pink;'}>
                 <Typography variant="h2">Carousel</Typography>
             </Grid>
         </Grid>
