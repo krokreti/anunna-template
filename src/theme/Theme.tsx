@@ -1,7 +1,24 @@
 import { createTheme } from '@mui/material/styles';
 import Friends from '../../public/Friends-Regular.ttf';
 
+
+declare module '@mui/material/styles' {
+    interface Theme {
+        transparent: {
+            main: string;
+        },
+    }
+    interface ThemeOptions {
+        transparent: {
+            main: string;
+        };
+    }
+}
+
 export const mainTheme = createTheme({
+    transparent: {
+        main: 'transparent',
+    },
     palette: {
         primary: {
             main: '#5A33DB',
@@ -16,6 +33,7 @@ export const mainTheme = createTheme({
         background: {
             default: '#161616',
         },
+
     },
     typography: {
         fontFamily: 'Friends'
@@ -33,6 +51,5 @@ export const mainTheme = createTheme({
               }
             `
         }
-    }
-
+    },
 });
