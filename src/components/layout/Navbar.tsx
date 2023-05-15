@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { AppBar, Button, useTheme, Stack } from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
