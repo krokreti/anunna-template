@@ -5,7 +5,7 @@ import CustomButton from "../../../components/CustomButton";
 
 const Portfolio = () => {
     const theme = useTheme();
-    const [value, setValue] = useState<number | null>(3);
+    const [value, _setValue] = useState<number | null>(3);
     return (
         <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'}>
             <Typography variant="h5" fontWeight={'bold'} marginY={2} >Portfólio</Typography>

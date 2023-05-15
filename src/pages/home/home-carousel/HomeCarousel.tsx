@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import 'react-alice-carousel/lib/alice-carousel.css';
-import AliceCarousel from "react-alice-carousel";
+
 
 const responsive = {
     0: {
@@ -41,15 +41,7 @@ const items = itemsLength.map((item, index) => {
 
 const HomeCarousel = () => {
     return (<Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} >
-        <AliceCarousel
-            mouseTracking
-            infinite
-            disableDotsControls
-            disableButtonsControls
-            paddingRight={50}
-            items={items}
-            responsive={responsive}
-        />
+
     </Box>)
 }
 
