@@ -1,5 +1,7 @@
-import { Typography, Box, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Portfolio from "./landing-page/Portfolio";
+import AnotherCarousel from "./home-carousel/AnotherCarousel";
+import CarouselButtons from "./home-carousel/CarouselButtons";
 
 const Home = () => {
     return (
@@ -8,11 +10,11 @@ const Home = () => {
                 <Grid item xs={12} md={5} p={4}>
                     <Portfolio />
                 </Grid>
-                <Grid item xs={12} md={1} border={'1px solid grey;'}>
-                    <Typography variant="h5">button</Typography>
+                <Grid item xs={12} md={2} py={4}>
+                    <CarouselButtons />
                 </Grid>
-                <Grid item xs={12} md={6} border={'1px solid pink;'}>
-                    <Typography variant="h2">Carousel</Typography>
+                <Grid item xs={12} md={5} >
+                    <AnotherCarousel />
                 </Grid>
             </Grid>
         </Box>)

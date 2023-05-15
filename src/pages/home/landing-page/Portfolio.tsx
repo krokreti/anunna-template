@@ -11,7 +11,7 @@ const Portfolio = () => {
             <Typography variant="h5" fontWeight={'bold'} marginY={2} >Portfólio</Typography>
             <Stack direction={'row'} display={'flex'} alignItems={'center'} gap={2}>
                 <Typography variant="h1" fontSize={'8em'} >01</Typography>
-                <Typography variant="h3" fontWeight={'bold'} sx={{ textWrap: 'balance' }}>Thetryum branding</Typography>
+                <Typography variant="h3" fontWeight={'bold'} sx={{ textWrap: 'balance' }}>Thetryum <br /> branding</Typography>
             </Stack>
             <Stack direction={'row'} display={'flex'} alignItems={'center'} >
                 <PlayArrowIcon color="primary" />
@@ -25,7 +25,8 @@ const Portfolio = () => {
                 <CustomButton onClick={() => { console.log('saber mais') }} children={'Saber mais'} sx={{ textTransform: 'none' }} />
                 <CustomButton onClick={() => { console.log('play') }} children={'Play'} variant="outlined" endIcon={<PlayArrowIcon color="primary" />} color="inherit" sx={{ textTransform: 'none' }} />
             </Stack>
-        </Box>)
+        </Box>
+    )
 }
 
 export default Portfolio;
