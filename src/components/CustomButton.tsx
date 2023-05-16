@@ -10,6 +10,7 @@ type ButtonProps = {
     startIcon?: React.ReactNode,
     endIcon?: React.ReactNode,
     color?: ColorType
+    size?: "small" | "medium" | "large" | undefined
     sx?: {},
     onClick: () => void,
 }
@@ -19,7 +20,7 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
         <Button
             variant={props.variant ?? "contained"}
             type={"button"}
-            size="large"
+            size={props.size ?? "large"}
             disabled={props.disabled ?? false}
             startIcon={props.startIcon}
             endIcon={props.endIcon}
