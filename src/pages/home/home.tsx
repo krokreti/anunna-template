@@ -1,8 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import Portfolio from "./landing-page/Portfolio";
 import AnotherCarousel from "./home-carousel/AnotherCarousel";
-import CarouselButtons from "./home-carousel/CarouselButtons";
-
 
 const Home = () => {
     return (

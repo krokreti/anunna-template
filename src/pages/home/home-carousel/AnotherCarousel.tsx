@@ -18,6 +18,7 @@ const AnotherCarousel = () => {
     const swiper = useSwiper();
     const nextSlide = () => {
         swiperRef.current.slideNext();
+        swiper.slideNext();
         console.log(swiperRef.current.realIndex)
     }
 
