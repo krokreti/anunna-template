@@ -2,7 +2,9 @@ import { Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import CarouselButtons from "./CarouselButtons";
 import { useSwiper } from 'swiper/react';
+import { useRef } from "react";
 
 // "https://d8cg12l7cuw6g.cloudfront.net/wp-content/uploads/2019/08/08172459/Wallpaper-vulca%CC%83o-para-celular-de-viajantes-travel-wanderlust-iphone-paisagem.jpeg",
 // "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -10,19 +12,23 @@ import { useSwiper } from 'swiper/react';
 // "https://w.forfun.com/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg",
 // "https://i.pinimg.com/736x/db/cc/65/dbcc656891295a71e99317c18e69a487--phone-wallpapers-smartphone.jpg"
 
-const AnotherCarousel = () => {
-    const swiper = useSwiper();
 
+const AnotherCarousel = () => {
+    const swiperRef = useRef<any>();
+    const swiper = useSwiper();
     const nextSlide = () => {
-        swiper.slideNext();
+        swiperRef.current.slideNext();
+        console.log(swiperRef.current.realIndex)
     }
 
     const prevSlide = () => {
-        swiper.slidePrev();
+        swiperRef.current.slidePrev();
+        console.log(swiperRef.current.realIndex)
     }
 
     return (
         <Box display={'flex'} height={'100%'} alignItems={'end'}>
+            <CarouselButtons next={nextSlide} prev={prevSlide} />
             <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
@@ -57,7 +63,10 @@ const AnotherCarousel = () => {
                 }}
 
                 onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
+                onSwiper={(swiper) => {
+                    console.log(swiper)
+                    swiperRef.current = swiper;
+                }}
             >
                 <SwiperSlide >
                     01
@@ -143,6 +152,6 @@ const AnotherCarousel = () => {
             </Swiper>
         </Box>
     )
-}
+};
 
 export default AnotherCarousel;
