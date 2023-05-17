@@ -13,9 +13,8 @@ const Portfolio = () => {
                 <Typography variant="h1" fontSize={'8em'} >01</Typography>
                 <Typography variant="h3" fontWeight={'bold'} sx={{ textWrap: 'balance' }}>Thetryum <br /> branding</Typography>
             </Stack>
-            <Stack direction={'row'} display={'flex'} alignItems={'center'} >
-                <PlayArrowIcon color="primary" />
-                <Typography variant="h6" fontWeight={'bold'} >Gerente do projeto:</Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} >
+                <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Gerente do projeto:</Typography>
                 <Typography variant="h6" ml={1} color={theme.palette.text.secondary} >Branding, ID Visual.</Typography>
             </Stack>
             <Rating name="rating" value={value} sx={{ color: theme.palette.primary.main, mt: 3 }} />

@@ -1,4 +1,4 @@
-import { AppBar, Button, useTheme, Stack } from '@mui/material';
+import { AppBar, Button, useTheme, Stack, useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -10,44 +10,50 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 const Navbar = () => {
     const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" color={'transparent'} sx={{ boxShadow: 'none' }}>
-                <Toolbar>
-                    <Stack direction={'row'} display={'flex'} alignItems={'center'} justifyContent={'space-between'} width={'100%'}>
+        <Box >
+            <AppBar position="static" color={'transparent'} sx={{ boxShadow: 'none', }} >
+                <Toolbar sx={{ px: 4, width: '100%' }}>
+                    <Stack direction={'row'} display={'flex'} alignItems={'center'} justifyContent={'space-between'} width={'100%'} >
                         <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={2}>
                             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                ROI888
+                                ANUNNA888
                             </Typography>
-                            <Button
-                                size='small'
-                                variant="outlined"
-                                color='inherit'
-                                startIcon={<PlayCircleOutlineIcon color='primary' />}
-                                sx={{ borderRadius: 20, py: 1.1, px: 1.7, textTransform: 'none' }}
-
-                            >
-                                Todos os projetos
-                            </Button>
+                            {!isSmallScreen && (
+                                <Button
+                                    size='small'
+                                    variant="outlined"
+                                    color='inherit'
+                                    startIcon={<PlayCircleOutlineIcon color='primary' />}
+                                    sx={{ borderRadius: 20, py: 1.1, px: 1.7, textTransform: 'none' }}
+                                >
+                                    Todos os projetos
+                                </Button>
+                            )}
                         </Stack>
                         <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={2}>
-                            <Avatar sx={{ bgcolor: theme.palette.text.primary, mr: 6 }}> D </Avatar>
-                            <IconButton
-                                size="large"
-                                edge="start"
-                                color="inherit"
-                                aria-label="search"
-                                sx={{ mr: 2 }}
-                            >
-                                <SearchIcon />
-                            </IconButton>
+                            {!isSmallScreen && (
+                                <>
+                                    <Avatar sx={{ bgcolor: theme.palette.text.primary, mr: 6 }}> D </Avatar>
+                                    <IconButton
+                                        size="large"
+                                        edge="start"
+                                        color="inherit"
+                                        aria-label="search"
+                                        sx={{ mr: 2 }}
+                                    >
+                                        <SearchIcon />
+                                    </IconButton>
+                                </>
+                            )}
                             <IconButton
                                 size="large"
                                 edge="start"
                                 color="inherit"
                                 aria-label="menu"
-                                sx={{ mr: 2 }}
                             >
+
                                 <MenuIcon />
                             </IconButton>
                         </Stack>
