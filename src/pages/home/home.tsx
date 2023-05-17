@@ -13,7 +13,7 @@ const Home = () => {
                 {/* <Grid item xs={12} md={2} py={4}>
                     <CarouselButtons />
                 </Grid> */}
-                <Grid item xs={12} md={7} >
+                <Grid item xs={12} md={7} pb={4}>
                     <AnotherCarousel />
                 </Grid>
             </Grid>

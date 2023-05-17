@@ -33,7 +33,7 @@ const AnotherCarousel = () => {
             <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
-                // centeredSlides={true}
+                centeredSlides={true}
                 // loop={true}
                 // navigation={true}
                 pagination={{
@@ -75,7 +75,7 @@ const AnotherCarousel = () => {
                         alt=""
                         width={150}
                         height={300}
-                        style={{ borderRadius: 20 }}
+                        style={{ borderRadius: 20, }}
                     />
                 </SwiperSlide>
                 <SwiperSlide >

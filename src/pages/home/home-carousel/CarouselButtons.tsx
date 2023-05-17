@@ -6,7 +6,7 @@ import CarouselProps from '../../../models/CarouselProps';
 
 const CarouselButtons: React.FC<CarouselProps> = ({ next, prev }) => {
     return (
-        <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} alignItems={'center'}>
+        <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} alignItems={'center'} mr={4}>
             <Stack direction={'row'} spacing={2}>
                 <CustomButton onClick={prev} variant='outlined' color='inherit' sx={{ borderRadius: 20, py: 1.5, px: 1.7 }}>
                     <ArrowLeftIcon color='primary' fontSize={'large'} />
