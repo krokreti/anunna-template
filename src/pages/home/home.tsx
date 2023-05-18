@@ -1,8 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import Portfolio from "./landing-page/Portfolio";
 import AnotherCarousel from "./home-carousel/AnotherCarousel";
-import { useAppSelector } from "../../hooks/redux-hooks";
-import { currentProjectStatus } from "../../store/project-slice";
 
 const Home = () => {
     return (
