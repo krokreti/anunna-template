@@ -14,7 +14,8 @@ const Home = () => {
                     <AnotherCarousel />
                 </Grid>
             </Grid>
-        </Box>)
+        </Box>
+    )
 }
 
 export default Home;

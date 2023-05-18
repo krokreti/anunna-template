@@ -29,7 +29,7 @@ const AnotherCarousel = () => {
     const [_activeSlide, _setActiveSlide] = useState(0);
     const isSmallScreen = useMediaQuery('(max-width:900px)');
     const swiperRef = useRef<any>();
-    const _swiper = useSwiper();
+    // const swiper = useSwiper();
 
     const nextSlide = () => {
         swiperRef.current.slideNext();
@@ -41,6 +41,10 @@ const AnotherCarousel = () => {
     const prevSlide = () => {
         swiperRef.current.slidePrev();
         console.log(swiperRef.current);
+    }
+
+    const handleSlideClick = (index: number) => {
+        console.log(index);
     }
 
     return (
@@ -83,14 +87,14 @@ const AnotherCarousel = () => {
                 }}
                 slideToClickedSlide={true}
                 onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => {
-                    console.log(swiper)
+                onSwiper={(swiper: any) => {
                     swiperRef.current = swiper;
+                    console.log(swiper)
                 }}
             >
                 {!isSmallScreen && (
                     imgArray.map((img, index) => (
-                        <SwiperSlide >
+                        <SwiperSlide key={index} onClick={() => { handleSlideClick(index) }}>
                             {index + 1}
                             <img src={img}
                                 alt={index.toString()}
@@ -103,7 +107,7 @@ const AnotherCarousel = () => {
                 )}
                 {isSmallScreen && (
                     imgArray.map((img, index) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={index}>
                             <img src={img}
                                 alt={index.toString()}
                                 width={'100%'}
