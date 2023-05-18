@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import Friends from '../../public/Friends-Regular.ttf';
 
 
@@ -15,7 +15,7 @@ declare module '@mui/material/styles' {
     }
 }
 
-export const mainTheme = createTheme({
+let mainTheme = createTheme({
     transparent: {
         main: 'transparent',
     },
@@ -36,8 +36,9 @@ export const mainTheme = createTheme({
 
     },
     typography: {
-        fontFamily: 'Friends'
+        fontFamily: 'Friends',
     },
+
     components: {
         MuiCssBaseline: {
             styleOverrides: `
@@ -53,3 +54,7 @@ export const mainTheme = createTheme({
         }
     },
 });
+
+mainTheme = responsiveFontSizes(mainTheme);
+
+export default mainTheme;

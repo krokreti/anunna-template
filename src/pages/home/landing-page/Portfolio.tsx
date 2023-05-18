@@ -7,15 +7,15 @@ const Portfolio = () => {
     const theme = useTheme();
     const [value, _setValue] = useState<number | null>(3);
     return (
-        <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'}>
-            <Typography variant="h5" fontWeight={'bold'} marginY={2} >Portfólio</Typography>
-            <Stack direction={'row'} display={'flex'} alignItems={'center'} gap={2}>
-                <Typography variant="h1" fontSize={'8em'} >01</Typography>
-                <Typography variant="h3" fontWeight={'bold'} sx={{ textWrap: 'balance' }}>Thetryum <br /> branding</Typography>
+        <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} >
+            <Typography variant="h4" fontWeight={'bold'} marginY={3} >Portfólio</Typography>
+            <Stack direction={'row'} display={'flex'} alignItems={'center'} gap={2} width={'100%'}>
+                <h1 style={{ fontSize: '7em', fontWeight: 'lighter' }}>01</h1>
+                <h3 style={{ fontSize: '2.5em' }}>Thetryum branding </h3>
             </Stack>
-            <Stack direction={{ xs: 'column', sm: 'row' }} >
-                <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Gerente do projeto:</Typography>
-                <Typography variant="h6" ml={1} color={theme.palette.text.secondary} >Branding, ID Visual.</Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} mt={1} p={0}>
+                <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Gênero do projeto:</Typography>
+                <Typography variant="h6" ml={{ xs: 0, sm: 1 }} color={theme.palette.text.secondary} >Branding, ID Visual.</Typography>
             </Stack>
             <Rating name="rating" value={value} sx={{ color: theme.palette.primary.main, mt: 3 }} />
             <Typography variant="h6" fontWeight={'bold'} >Destaques do projeto:</Typography>
