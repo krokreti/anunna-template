@@ -4,6 +4,7 @@ import { Box } from '@mui/material';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/home/home';
 
+
 function App() {
 
   return (
