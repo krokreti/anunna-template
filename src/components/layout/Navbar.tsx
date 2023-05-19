@@ -7,6 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Avatar from '@mui/material/Avatar';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import LogoAnunna from '../../../public/Logo.svg';
 
 const Navbar = () => {
     const theme = useTheme();
@@ -17,9 +18,7 @@ const Navbar = () => {
                 <Toolbar sx={{ width: '100%' }}>
                     <Stack direction={'row'} display={'flex'} alignItems={'center'} justifyContent={'space-between'} width={'100%'} >
                         <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={2}>
-                            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                ANUNNA888
-                            </Typography>
+                            <img src={LogoAnunna} alt="logo" width={50} />
                             {!isSmallScreen && (
                                 <Button
                                     size='small'

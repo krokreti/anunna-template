@@ -9,10 +9,10 @@ const Home = () => {
         >
             {/* <button style={{ background: 'white' }}>TESTE</button> */}
             <Grid container height={'100%'}>
-                <Grid item xs={12} md={5} pl={6} pb={4}>
+                <Grid item xs={12} md={5} pl={6} pb={6}>
                     <Portfolio />
                 </Grid>
-                <Grid item xs={12} md={7} pb={4} >
+                <Grid item xs={12} md={7} pb={6} >
                     <AnotherCarousel />
                 </Grid>
             </Grid>
