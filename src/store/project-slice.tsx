@@ -26,7 +26,7 @@ const images = {
         "https://w.forfun.com/fetch/f1/f1c364e97117fe475f352ea55e55d02c.jpeg",
     ],
     background: [
-        "https://trello.com/1/cards/64627c399663f8f03d124cdc/attachments/64627c602d0611d4b00f2938/previews/64627c612d0611d4b00f2949/download/BackgroundSite-Expansion-Desktop.jpg",
+        "https://github.com/krokreti/anunna-template/blob/main/public/BackgroundSite-Expansion-Desktop.jpg?raw=true",
         "https://i.pinimg.com/originals/4d/0f/33/4d0f33b2862e555c94d85c0873dd1fd9.png",
         "https://cdn.wallpapersafari.com/26/66/ugWdrE.jpg",
         "https://img.freepik.com/premium-vector/metaverse-virtual-reality-augmented-reality-blockchain-technology-user-interface-3d-experience-word-metaverse-with-world-map-globe-futuristic-environment-background_115579-1673.jpg",
