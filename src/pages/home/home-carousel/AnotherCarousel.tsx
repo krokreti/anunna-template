@@ -53,7 +53,7 @@ const AnotherCarousel = () => {
             <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
-                centeredSlides={true}
+
                 // loop={true}
                 navigation={isSmallScreen}
                 // modules={[Navigation]}
@@ -64,22 +64,42 @@ const AnotherCarousel = () => {
                     900: {
                         slidesPerView: 1,
                         spaceBetween: 20,
-                        autoHeight: true,
+                        autoHeight: false,
 
                     },
                     1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 40,
+                        slidesPerView: 1.7,
+                        spaceBetween: 30,
+                        autoHeight: false,
+                    },
+                    1100: {
+                        slidesPerView: 1.9,
+                        spaceBetween: 30,
+                        autoHeight: false,
+                    },
+                    1200: {
+                        slidesPerView: 2.1,
+                        spaceBetween: 30,
                         autoHeight: false,
                     },
                     1350: {
-                        slidesPerView: 4,
+                        slidesPerView: 2.5,
                         spaceBetween: 50,
                         autoHeight: false,
                     },
-                    1700: {
-                        slidesPerView: 5,
-                        spaceBetween: 50,
+                    1500: {
+                        slidesPerView: 2.7,
+                        spaceBetween: 0,
+                        autoHeight: false,
+                    },
+                    1650: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                        autoHeight: false,
+                    },
+                    1850: {
+                        slidesPerView: 3.5,
+                        spaceBetween: 0,
                         autoHeight: false,
                     },
                 }}
@@ -92,14 +112,21 @@ const AnotherCarousel = () => {
             >
                 {!isSmallScreen && (
                     slides!.map((img, index) => (
-                        <SwiperSlide key={index} onClick={() => { handleSlideClick(index) }}>
-                            {index + 1}
-                            <img src={img}
-                                alt={index.toString()}
-                                width={150}
-                                height={300}
-                                style={{ borderRadius: 20, }}
-                            />
+                        <SwiperSlide
+                            key={index}
+                            onClick={() => { handleSlideClick(index) }}
+                            // style={{ width: '255px;', border: '1px solid red' }}>
+                            style={{ width: '255px;' }}>
+                            {/* <Box display={"flex"} flexDirection={'column'} width={'255px'} border='1px solid blue' > */}
+                            <Box display={"flex"} flexDirection={'column'} width={'255px'} >
+                                {(index + 1).toString().padStart(2, '0')}
+                                <img src={img}
+                                    alt={index.toString()}
+                                    width={'100%'}
+                                    height={'419px'}
+                                    style={{ borderRadius: 20, }}
+                                />
+                            </Box>
                         </SwiperSlide>
                     ))
                 )}

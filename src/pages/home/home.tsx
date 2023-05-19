@@ -5,11 +5,11 @@ import AnotherCarousel from "./home-carousel/AnotherCarousel";
 const Home = () => {
     return (
         <Box
-            height={'calc(100vh - 4em)'}
+            height={'calc(100vh - 7em)'}
         >
             {/* <button style={{ background: 'white' }}>TESTE</button> */}
             <Grid container height={'100%'}>
-                <Grid item xs={12} md={5} p={4}>
+                <Grid item xs={12} md={5} pl={6} pb={4}>
                     <Portfolio />
                 </Grid>
                 <Grid item xs={12} md={7} pb={4} >

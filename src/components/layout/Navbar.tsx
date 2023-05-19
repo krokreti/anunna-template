@@ -12,9 +12,9 @@ const Navbar = () => {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
     return (
-        <Box >
-            <AppBar position="static" color={'transparent'} sx={{ boxShadow: 'none', }} >
-                <Toolbar sx={{ px: 4, width: '100%' }}>
+        <Box width={'100%'} p={3}>
+            <AppBar position="static" color={'transparent'} sx={{ boxShadow: 'none' }}  >
+                <Toolbar sx={{ width: '100%' }}>
                     <Stack direction={'row'} display={'flex'} alignItems={'center'} justifyContent={'space-between'} width={'100%'} >
                         <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={2}>
                             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -60,7 +60,7 @@ const Navbar = () => {
                     </Stack>
                 </Toolbar>
             </AppBar>
-        </Box>
+        </Box >
     );
 }
 

@@ -8,10 +8,12 @@ const Portfolio = () => {
     const [value, _setValue] = useState<number | null>(3);
     return (
         <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} >
-            <Typography variant="h4" fontWeight={'bold'} marginY={3} >Portfólio</Typography>
+            <Typography variant="h4" fontWeight={'bold'}  >Portfólio</Typography>
             <Stack direction={'row'} display={'flex'} alignItems={'center'} gap={2} width={'100%'}>
-                <h1 style={{ fontSize: '7em', fontWeight: 'lighter' }}>01</h1>
-                <h3 style={{ fontSize: '2.5em' }}>Thetryum branding </h3>
+                <h1 style={{ fontSize: '7.6em', fontWeight: 'lighter', fontFamily: 'FriendsUltraLight' }}>01</h1>
+                {/* <Typography variant="h1" fontFamily={'FriendsUltraLight'} >01</Typography> */}
+
+                <h3 style={{ fontSize: '2.5em' }}>Thetryum Expansion </h3>
             </Stack>
             <Stack direction={{ xs: 'column', sm: 'row' }} mt={1} p={0}>
                 <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Gênero do projeto:</Typography>
