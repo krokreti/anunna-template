@@ -42,7 +42,7 @@ const AnotherCarousel = () => {
 
     const handleSlideClick = (index: number) => {
         console.log(index);
-        dispatch(projectActions.changeProject(swiperRef.current.activeIndex));
+        dispatch(projectActions.changeProject(index));
     }
 
     return (
