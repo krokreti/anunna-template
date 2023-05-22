@@ -15,7 +15,7 @@ const images = {
         "https://w.forfun.com/fetch/f1/f1c364e97117fe475f352ea55e55d02c.jpeg",
     ],
     backgroundMobile: [
-        "https://d8cg12l7cuw6g.cloudfront.net/wp-content/uploads/2019/08/08172459/Wallpaper-vulca%CC%83o-para-celular-de-viajantes-travel-wanderlust-iphone-paisagem.jpeg",
+        "https://github.com/krokreti/anunna-template/blob/main/public/BackgroundSite-Expansion-Mobile.jpg?raw=true",
         "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "https://i.pinimg.com/originals/2f/31/4c/2f314ca9f056e2dda005cd7989622e23.jpg",
         "https://w.forfun.com/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg",
@@ -35,7 +35,7 @@ const images = {
         "https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701855840.jpg",
         "https://wallpaperaccess.com/full/38550.jpg",
         "https://img2.wallspic.com/crops/9/6/3/8/88369/88369-capital_city-horizon-deus_ex_human_revolution-cyberpunk-skyline-4500x2531.jpg"
-    ]
+    ],
 }
 
 const initialProjectState: ProjectType = {
@@ -57,7 +57,7 @@ const projectSlice = createSlice({
             };
         },
         changeProject: (state, action: PayloadAction<number>) => {
-            console.log(state.background);
+            // console.log(state.background);
             state.background = images.background[action.payload];
             state.backgroundMobile = images.backgroundMobile[action.payload];
         },
@@ -67,4 +67,5 @@ const projectSlice = createSlice({
 export const projectActions = projectSlice.actions;
 export const currentProjectStatus = (state: RootState) => state.project;
 export const slidesList = (state: RootState) => state.project.slides;
+export const backgroundTotal = () => images.backgroundMobile.length;
 export default projectSlice.reducer;

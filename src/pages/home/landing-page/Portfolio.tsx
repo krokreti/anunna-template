@@ -1,4 +1,4 @@
-import { Typography, Box, Stack, useTheme, Rating } from "@mui/material";
+import { Typography, Box, Stack, useTheme, Rating, useMediaQuery } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useState } from "react";
 import CustomButton from "../../../components/CustomButton";
@@ -7,6 +7,7 @@ import thetryumExpansion from '../../../../public/01-ThetryumExpansion.svg';
 const Portfolio = () => {
     const theme = useTheme();
     const [value, _setValue] = useState<number | null>(3);
+    const mediaQuery = useMediaQuery('(max-width:900px)');
     return (
         <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} >
             <Typography variant="h4" fontWeight={'bold'}  >Portfólio</Typography>
@@ -15,7 +16,7 @@ const Portfolio = () => {
                 {/* <Typography variant="h1" fontFamily={'FriendsUltraLight'} >01</Typography> */}
 
                 {/* <h3 style={{ fontSize: '2.5em' }}>Thetryum Expansion </h3> */}
-                <img src={thetryumExpansion} alt="thetryum" width={400} />
+                <img src={thetryumExpansion} alt="thetryum" width={mediaQuery ? 270 : 400} />
             </Stack>
             <Stack direction={{ xs: 'column', sm: 'row' }} mt={1} p={0}>
                 <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Gênero do projeto:</Typography>
