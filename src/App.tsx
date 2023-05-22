@@ -1,4 +1,4 @@
-import { CssBaseline, ThemeProvider } from '@mui/material'
+import { CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material'
 import mainTheme from './theme/Theme';
 import { Box } from '@mui/material';
 import Navbar from './components/layout/Navbar';
@@ -9,12 +9,14 @@ import { currentProjectStatus } from './store/project-slice';
 
 function App() {
   const background = useAppSelector(currentProjectStatus);
+  const mediaQuery = useMediaQuery('(max-width:900px)');
+
   return (
     <ThemeProvider theme={mainTheme}>
       <CssBaseline />
       <Box
         sx={{
-          backgroundImage: `url(${background.background})`,
+          backgroundImage: `url(${mediaQuery ? background.backgroundMobile : background.background})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
