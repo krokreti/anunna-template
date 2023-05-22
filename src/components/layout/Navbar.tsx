@@ -1,10 +1,9 @@
-import { AppBar, Button, useTheme, Stack, useMediaQuery, TextField } from '@mui/material';
+import { AppBar, Button, Stack, useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import Avatar from '@mui/material/Avatar';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import LogoAnunna from '../../../public/Logo.svg';
 import CustomInput from '../CustomInput';
