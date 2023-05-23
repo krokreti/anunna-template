@@ -24,7 +24,7 @@ const CssTextField = styled(TextField)({
 });
 
 const CustomInput = () => {
-    return (<CssTextField size='medium' sx={{ mr: 8 }} />);
+    return (<CssTextField size='medium' sx={{ mr: 15 }} />);
 }
 
 export default CustomInput;

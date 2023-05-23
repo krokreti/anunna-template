@@ -41,7 +41,7 @@ const Navbar = () => {
                                         edge="start"
                                         color="inherit"
                                         aria-label="search"
-                                        sx={{ mr: 2 }}
+                                        sx={{ mx: 2 }}
                                     >
                                         <SearchIcon sx={{ fontSize: 45 }} />
                                     </IconButton>
