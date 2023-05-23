@@ -1,12 +1,10 @@
-import { Typography, Box, Stack, useTheme, Rating, useMediaQuery } from "@mui/material";
+import { Typography, Box, Stack, useTheme, useMediaQuery } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import { useState } from "react";
 import CustomButton from "../../../components/CustomButton";
 import thetryumExpansion from '../../../../public/01-ThetryumExpansion.svg';
 
 const Portfolio = () => {
     const theme = useTheme();
-    const [value, _setValue] = useState<number | null>(3);
     const mediaQuery = useMediaQuery('(max-width:900px)');
     return (
         <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} >
