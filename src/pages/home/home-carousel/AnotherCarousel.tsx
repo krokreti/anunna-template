@@ -111,7 +111,7 @@ const AnotherCarousel = () => {
                 }}
             >
                 {!isSmallScreen && (
-                    slides!.map((img, index) => (
+                    slides!.map((img: string, index: number) => (
                         <SwiperSlide
                             key={index}
                             onClick={() => { handleSlideClick(index) }}
@@ -131,7 +131,7 @@ const AnotherCarousel = () => {
                     ))
                 )}
                 {isSmallScreen && (
-                    slides!.map((img, index) => (
+                    slides!.map((img: string, index: number) => (
                         <SwiperSlide key={index}>
                             <img src={img}
                                 alt={index.toString()}

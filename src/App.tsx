@@ -1,6 +1,6 @@
-import { CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material'
+import { ThemeProvider } from '@mui/material/styles';
 import mainTheme from './theme/Theme';
-import { Box } from '@mui/material';
+import { CssBaseline, Box, useMediaQuery } from '@mui/material';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/home/home';
 import { useAppDispatch, useAppSelector } from './hooks/redux-hooks';
@@ -11,7 +11,7 @@ function App() {
   const dispatch = useAppDispatch();
   const background = useAppSelector(currentProjectStatus);
   const totalCount = useAppSelector(backgroundTotal);
-  const mediaQuery = useMediaQuery('(max-width:900px)');
+  const mediaQuery = useMediaQuery('(max-width:1050px)');
   const touchStartXRef = useRef(0);
   const [backgroundCount, setBackgroundCount] = useState<number>(0);
 
@@ -68,6 +68,7 @@ function App() {
         <Home />
       </Box>
     </ThemeProvider>
+
   )
 }
 

@@ -11,7 +11,8 @@ const CssTextField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
         '& fieldset': {
             borderColor: '#E0E3E7',
-            borderRadius: 20,
+            borderRadius: 30,
+            width: '20em',
         },
         '&:hover fieldset': {
             borderColor: '#B2BAC2',
@@ -23,7 +24,7 @@ const CssTextField = styled(TextField)({
 });
 
 const CustomInput = () => {
-    return (<CssTextField size='small' />);
+    return (<CssTextField size='medium' sx={{ mr: 8 }} />);
 }
 
 export default CustomInput;

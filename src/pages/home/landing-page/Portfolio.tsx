@@ -22,12 +22,11 @@ const Portfolio = () => {
                 <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Gênero do projeto:</Typography>
                 <Typography variant="h6" ml={{ xs: 0, sm: 1 }} color={theme.palette.text.secondary} >Branding, ID Visual.</Typography>
             </Stack>
-            <Rating name="rating" value={value} sx={{ color: theme.palette.primary.main, mt: 3 }} />
             <Typography variant="h6" fontWeight={'bold'} >Destaques do projeto:</Typography>
-            <Typography variant="h6" color={theme.palette.text.secondary} >Behance Fotografia 3D, Movimento 3D. <br /> Pinterest: 100 mil visualizações.</Typography>
+            <Typography variant="h6" color={theme.palette.text.secondary} >Behance Fotografia 3D, Movimento 3D.</Typography>
             <Stack direction={'row'} gap={2} mt={5}>
-                <CustomButton onClick={() => { console.log('saber mais') }} children={'Saber mais'} sx={{ textTransform: 'none', px: 5, py: 1.5 }} />
-                <CustomButton onClick={() => { console.log('play') }} children={'Play'} variant="outlined" endIcon={<PlayArrowIcon color="primary" />} color="inherit" sx={{ textTransform: 'none', px: 4, border: '3px solid' }} />
+                <CustomButton onClick={() => { console.log('saber mais') }} children={'Saber mais'} sx={{ textTransform: 'none', px: 6, py: 1.5, fontSize: '1.2em' }} />
+                <CustomButton onClick={() => { console.log('play') }} children={'Play'} variant="outlined" endIcon={<PlayArrowIcon color="primary" />} color="inherit" sx={{ textTransform: 'none', px: 4, border: '3px solid grey', fontSize: '1.2em' }} />
             </Stack>
         </Box>
     )

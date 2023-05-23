@@ -4,7 +4,6 @@ import FriendsThin from '../../public/Friends-Thin.ttf';
 import FriendsThinItalic from '../../public/Friends-ThinItalic.ttf';
 import FriendsUltraLight from '../../public/Friends-UltraLight.ttf'
 
-
 declare module '@mui/material/styles' {
     interface Theme {
         transparent: {

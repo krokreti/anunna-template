@@ -10,21 +10,21 @@ import CustomInput from '../CustomInput';
 
 const Navbar = () => {
 
-    const isSmallScreen = useMediaQuery('(max-width:900px)');
+    const isSmallScreen = useMediaQuery('(max-width:1050px)');
     return (
-        <Box width={'100%'} p={3}>
+        <Box width={'100%'} p={7}>
             <AppBar position="static" color={'transparent'} sx={{ boxShadow: 'none' }}  >
                 <Toolbar sx={{ width: '100%' }}>
                     <Stack direction={'row'} display={'flex'} alignItems={'center'} justifyContent={'space-between'} width={'100%'} >
                         <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={2} >
-                            <img src={LogoAnunna} alt="logo" width={50} />
+                            <img src={LogoAnunna} alt="logo" width={65} />
                             {!isSmallScreen && (
                                 <Button
-                                    size='small'
+                                    size='large'
                                     variant="outlined"
                                     color='inherit'
                                     startIcon={<PlayCircleOutlineIcon color='primary' />}
-                                    sx={{ borderRadius: 20, py: 1.1, px: 1.7, textTransform: 'none' }}
+                                    sx={{ borderRadius: 26, py: 1.1, px: 1.7, textTransform: 'none', fontSize: '1.2em' }}
                                     style={{ marginLeft: 100 }}
                                 >
                                     Todos os projetos
@@ -43,7 +43,7 @@ const Navbar = () => {
                                         aria-label="search"
                                         sx={{ mr: 2 }}
                                     >
-                                        <SearchIcon fontSize='large' />
+                                        <SearchIcon sx={{ fontSize: 45 }} />
                                     </IconButton>
                                 </>
                             )}
@@ -54,7 +54,7 @@ const Navbar = () => {
                                 aria-label="menu"
                             >
 
-                                <MenuIcon fontSize='large' />
+                                <MenuIcon sx={{ fontSize: 45 }} />
                             </IconButton>
                         </Stack>
                     </Stack>
