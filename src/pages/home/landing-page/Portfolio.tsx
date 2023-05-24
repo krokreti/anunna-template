@@ -2,7 +2,7 @@ import { Typography, Box, Stack, useTheme, useMediaQuery } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CustomButton from "../../../components/CustomButton";
 import thetryumExpansion from '../../../../public/01-ThetryumExpansion.svg';
-import PlayIcon from '../../../components/CustomPlayIcon';
+// import PlayIcon from '../../../components/CustomPlayIcon';
 
 const Portfolio = () => {
     const theme = useTheme();
@@ -35,7 +35,7 @@ const Portfolio = () => {
                 <CustomButton onClick={() => { console.log('play') }}
                     children={'Play'}
                     variant="outlined"
-                    endIcon={<PlayIcon />}
+                    endIcon={<PlayArrowIcon color="primary" />}
                     color="inherit"
                     sx={{
                         textTransform: 'none',
