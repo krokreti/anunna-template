@@ -6,7 +6,7 @@ import Home from './pages/home/home';
 import { useAppDispatch, useAppSelector } from './hooks/redux-hooks';
 import { backgroundTotal, currentProjectStatus, projectActions } from './store/project-slice';
 import { useRef, useState, useEffect } from 'react';
-import { motion, AnimatePresence } from "framer-motion"
+import AnimatedBackground from './components/AnimatedBackground';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -55,31 +55,15 @@ function App() {
   return (
     <ThemeProvider theme={mainTheme}>
       <CssBaseline />
-      <AnimatePresence>
-        <motion.div
-          key={mediaQuery ? background.backgroundMobile : background.background}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <Box
-            sx={{
-              backgroundImage: `url(${mediaQuery ? background.backgroundMobile : background.background})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-            }}
-            onTouchStart={mediaQuery ? handleTouchStart : () => { }}
-            onTouchEnd={mediaQuery ? handleTouchEnd : () => { }}
-          >
-            <Navbar />
-            <Home />
-          </Box>
-        </motion.div>
-      </AnimatePresence>
+      <AnimatedBackground mediaQuery={mediaQuery} background={background.background} backgroundMobile={background.backgroundMobile} />
+      <Box
+        onTouchStart={mediaQuery ? handleTouchStart : () => { }}
+        onTouchEnd={mediaQuery ? handleTouchEnd : () => { }}
+      >
+        <Navbar />
+        <Home />
+      </Box>
     </ThemeProvider>
-
   )
 }
 
