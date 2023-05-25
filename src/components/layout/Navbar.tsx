@@ -7,17 +7,23 @@ import SearchIcon from '@mui/icons-material/Search';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import LogoAnunna from '../../../public/Logo.svg';
 import CustomInput from '../CustomInput';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-
+    const navigate = useNavigate();
     const isSmallScreen = useMediaQuery('(max-width:1050px)');
+
+    const navigateToHome = () => {
+        navigate('/');
+    }
+
     return (
         <Box width={'100%'} p={7}>
             <AppBar position="static" color={'transparent'} sx={{ boxShadow: 'none' }}  >
                 <Toolbar sx={{ width: '100%' }}>
                     <Stack direction={'row'} display={'flex'} alignItems={'center'} justifyContent={'space-between'} width={'100%'} >
                         <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={2} >
-                            <img src={LogoAnunna} alt="logo" width={65} />
+                            <img src={LogoAnunna} alt="logo" width={65} onClick={navigateToHome} style={{ cursor: 'pointer' }} />
                             {!isSmallScreen && (
                                 <Button
                                     size='large'
@@ -26,6 +32,7 @@ const Navbar = () => {
                                     startIcon={<PlayCircleOutlineIcon color='primary' />}
                                     sx={{ borderRadius: 26, py: 1.1, px: 1.7, textTransform: 'none', fontSize: '1.2em' }}
                                     style={{ marginLeft: 100 }}
+                                    onClick={navigateToHome}
                                 >
                                     Todos os projetos
                                 </Button>

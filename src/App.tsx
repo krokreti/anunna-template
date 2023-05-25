@@ -2,11 +2,11 @@ import { ThemeProvider } from '@mui/material/styles';
 import mainTheme from './theme/Theme';
 import { CssBaseline, Box, useMediaQuery } from '@mui/material';
 import Navbar from './components/layout/Navbar';
-import Home from './pages/home/home';
 import { useAppDispatch, useAppSelector } from './hooks/redux-hooks';
 import { backgroundTotal, currentProjectStatus, projectActions } from './store/project-slice';
 import { useRef, useState, useEffect } from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -61,7 +61,7 @@ function App() {
         onTouchEnd={mediaQuery ? handleTouchEnd : () => { }}
       >
         <Navbar />
-        <Home />
+        <Outlet />
       </Box>
     </ThemeProvider>
   )

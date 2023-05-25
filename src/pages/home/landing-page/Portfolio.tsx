@@ -2,11 +2,17 @@ import { Typography, Box, Stack, useTheme, useMediaQuery } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CustomButton from "../../../components/CustomButton";
 import thetryumExpansion from '../../../../public/01-ThetryumExpansion.svg';
-// import PlayIcon from '../../../components/CustomPlayIcon';
+import { useNavigate } from "react-router-dom";
 
 const Portfolio = () => {
+    const navigate = useNavigate();
     const theme = useTheme();
     const mediaQuery = useMediaQuery('(max-width:900px)');
+
+    const navigateToProject = () => {
+        navigate('project-details/1');
+    }
+
     return (
         <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} >
             <Typography variant="h4" fontWeight={'bold'} mb={8} >Portfólio</Typography>
@@ -26,7 +32,7 @@ const Portfolio = () => {
                 <Typography color={theme.palette.text.secondary} >Behance Fotografia 3D, Movimento 3D.</Typography>
             </Stack>
             <Stack direction={'row'} gap={2} mt={5}>
-                <CustomButton onClick={() => { console.log('saber mais') }} children={'Saber mais'} sx={{
+                <CustomButton onClick={navigateToProject} children={'Saber mais'} sx={{
                     textTransform: 'none',
                     px: 6, py: 1.5,
                     fontSize: '1.2em',
