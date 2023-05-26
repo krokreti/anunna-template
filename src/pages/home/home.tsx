@@ -2,7 +2,7 @@ import { Box, Grid, useMediaQuery } from "@mui/material";
 import Portfolio from "./landing-page/Portfolio";
 import AnotherCarousel from "./home-carousel/AnotherCarousel";
 
-const Home = () => {
+const HomePage = () => {
     const mediaQuery = useMediaQuery('(max-width:1050px)');
     return (
         <Box
@@ -21,4 +21,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default HomePage;
