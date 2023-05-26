@@ -60,7 +60,9 @@ function App() {
         background={mediaQuery ? background.backgroundMobile : background.background}
         nextBackground={mediaQuery ? background.backgroundMobile : background.background}
       />
+
       <Box
+        // @ts-ignore
         onTouchStart={mediaQuery ? handleTouchStart : () => { }}
         onTouchEnd={mediaQuery ? handleTouchEnd : () => { }}
       >

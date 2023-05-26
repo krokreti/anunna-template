@@ -1,13 +1,14 @@
 import * as THREE from "three"
 import { useEffect, useRef, useState } from "react"
 import { Canvas, extend, useFrame, useLoader, useThree } from "@react-three/fiber"
-import { useTexture, shaderMaterial } from "@react-three/drei"
+import { shaderMaterial } from "@react-three/drei"
 
 type AnimatedBackgroundType = {
     mediaQuery: boolean,
     background: string,
     nextBackground: string,
 }
+
 
 const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
     const ImageFadeMaterial: any = shaderMaterial(
@@ -72,7 +73,12 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
                     setHover(true);
                 }}>
                 <planeBufferGeometry attach="geometry" />
-                <imageFadeMaterial ref={ref} tex={texture1} tex2={texture2} disp={dispTexture} toneMapped={false} />
+
+
+                {
+                    // @ts-ignore
+                    <imageFadeMaterial ref={ref} tex={texture1} tex2={texture2} disp={dispTexture} toneMapped={false} />
+                }
             </mesh>
         )
     }
