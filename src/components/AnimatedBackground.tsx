@@ -15,8 +15,11 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
         {
             effectFactor: 1.2,
             dispFactor: 0,
+            // @ts-ignore
             tex: undefined,
+            // @ts-ignore
             tex2: undefined,
+            // @ts-ignore
             disp: undefined
         },
         ` 
@@ -73,7 +76,6 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
                     setHover(true);
                 }}>
                 <planeBufferGeometry attach="geometry" />
-
 
                 {
                     // @ts-ignore
