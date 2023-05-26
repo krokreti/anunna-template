@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ProjectDetails from "../pages/project-details/ProjectDetails";
+// @ts-ignore
 import Home from "../pages/home/Home";
 
 export const router = createBrowserRouter([

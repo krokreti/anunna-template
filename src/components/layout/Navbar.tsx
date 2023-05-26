@@ -18,6 +18,7 @@ const Navbar = () => {
     }
 
     return (
+        // @ts-ignore
         <Box width={'100%'} p={isSmallScreen ? 2 : 7} mb={isSmallScreen ? 3 : 0}>
             <AppBar position="static" color={'transparent'} sx={{ boxShadow: 'none' }}  >
                 <Toolbar sx={{ width: '100%' }}>
