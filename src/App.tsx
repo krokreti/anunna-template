@@ -55,7 +55,11 @@ function App() {
   return (
     <ThemeProvider theme={mainTheme}>
       <CssBaseline />
-      <AnimatedBackground mediaQuery={mediaQuery} background={background.background} backgroundMobile={background.backgroundMobile} />
+      <AnimatedBackground
+        mediaQuery={mediaQuery}
+        background={mediaQuery ? background.backgroundMobile : background.background}
+        nextBackground={mediaQuery ? background.backgroundMobile : background.background}
+      />
       <Box
         onTouchStart={mediaQuery ? handleTouchStart : () => { }}
         onTouchEnd={mediaQuery ? handleTouchEnd : () => { }}
