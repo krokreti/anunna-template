@@ -1,8 +1,8 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
-import FriendsRegular from '../../public/Friends-Regular.ttf';
-import FriendsThin from '../../public/Friends-Thin.ttf';
-import FriendsThinItalic from '../../public/Friends-ThinItalic.ttf';
-import FriendsUltraLight from '../../public/Friends-UltraLight.ttf'
+import FriendsRegular from '/Friends-Regular.ttf';
+import FriendsThin from '/Friends-Thin.ttf';
+import FriendsThinItalic from '/Friends-ThinItalic.ttf';
+import FriendsUltraLight from '/Friends-UltraLight.ttf'
 
 declare module '@mui/material/styles' {
     interface Theme {

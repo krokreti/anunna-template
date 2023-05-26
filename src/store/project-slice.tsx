@@ -10,16 +10,16 @@ const images = {
         "https://w.forfun.com/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg",
     ],
     backgroundMobile: [
-        "../../public/mobile-images/00.jpg",
-        "../../public/mobile-images/01.jpeg",
-        "../../public/mobile-images/02.jpg",
-        "../../public/mobile-images/03.jpeg",
+        "/mobile-images/00.jpg",
+        "/mobile-images/01.jpeg",
+        "/mobile-images/02.jpg",
+        "/mobile-images/03.jpeg",
     ],
     background: [
-        "../../public/project-images/00.jpg",
-        "../../public/project-images/01.png",
-        "../../public/project-images/02.jpg",
-        "../../public/project-images/03.jpg",
+        "/project-images/00.jpg",
+        "/project-images/01.png",
+        "/project-images/02.jpg",
+        "/project-images/03.jpg",
     ],
 }
 
