@@ -18,7 +18,7 @@ const Navbar = () => {
     }
 
     return (
-        <Box width={'100%'} p={7}>
+        <Box width={'100%'} p={isSmallScreen ? 2 : 7} mb={isSmallScreen ? 3 : 0}>
             <AppBar position="static" color={'transparent'} sx={{ boxShadow: 'none' }}  >
                 <Toolbar sx={{ width: '100%' }}>
                     <Stack direction={'row'} display={'flex'} alignItems={'center'} justifyContent={'space-between'} width={'100%'} >

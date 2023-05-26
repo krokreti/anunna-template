@@ -1,7 +1,6 @@
-// import { Box } from '@mui/material';
 import * as THREE from "three"
 import { useEffect, useRef, useState } from "react"
-import { Canvas, extend, useFrame, useThree } from "@react-three/fiber"
+import { Canvas, extend, useFrame, useLoader, useThree } from "@react-three/fiber"
 import { useTexture, shaderMaterial } from "@react-three/drei"
 
 type AnimatedBackgroundType = {
@@ -11,7 +10,7 @@ type AnimatedBackgroundType = {
 }
 
 const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
-    const ImageFadeMaterial = shaderMaterial(
+    const ImageFadeMaterial: any = shaderMaterial(
         {
             effectFactor: 1.2,
             dispFactor: 0,
@@ -19,12 +18,15 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
             tex2: undefined,
             disp: undefined
         },
-        ` varying vec2 vUv;
+        ` 
+        varying vec2 vUv;
           void main() {
             vUv = uv;
             gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-          }`,
-        ` varying vec2 vUv;
+          }
+        `,
+        ` 
+        varying vec2 vUv;
           uniform sampler2D tex;
           uniform sampler2D tex2;
           uniform sampler2D disp;
@@ -34,7 +36,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
           void main() {
             vec2 uv = vUv;
             vec4 disp = texture2D(disp, uv);
-            vec2 distortedPosition = vec2(uv.x + dispFactor * (disp.r*effectFactor), uv.y);
+            vec2 distortedPosition = vec2(uv.x + dispFactor * (disp.r * 3.0 * effectFactor), uv.y);
             vec2 distortedPosition2 = vec2(uv.x - (1.0 - dispFactor) * (disp.r*effectFactor), uv.y);
             vec4 _texture = texture2D(tex, distortedPosition);
             vec4 _texture2 = texture2D(tex2, distortedPosition2);
@@ -51,10 +53,10 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
     function FadingImage({ currentBackground, nextBackground }: { currentBackground: string, nextBackground: string }) {
         const ref = useRef<any>()
         const viewport = useThree(state => state.viewport)
-        const [texture1, texture2, dispTexture] = useTexture([currentBackground, nextBackground, "../../public/displacements/13.jpg"]);
+        const [texture1, texture2, dispTexture] = useLoader(THREE.TextureLoader, [currentBackground, nextBackground, "../../public/displacements/15.png"]);
         const [hovered, setHover] = useState(false)
         useFrame(() => {
-            ref.current.dispFactor = THREE.MathUtils.lerp(ref.current.dispFactor, hovered ? 1 : 0, 0.075)
+            ref.current.dispFactor = THREE.MathUtils.lerp(ref.current.dispFactor, hovered ? 1 : 0, 0.0375)
         })
 
         useEffect(() => {
@@ -65,17 +67,15 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
         return (
             <mesh
                 scale={[viewport.width, viewport.height, 1]}
-                onContextMenu={(e) => console.log('context menu')}
-                onUpdate={(self: any) => {
-                    console.log('props have been updated', self)
+                onContextMenu={(_e) => console.log('context menu')}
+                onUpdate={(_self: any) => {
                     setHover(true);
                 }}>
-                <planeGeometry />
+                <planeBufferGeometry attach="geometry" />
                 <imageFadeMaterial ref={ref} tex={texture1} tex2={texture2} disp={dispTexture} toneMapped={false} />
             </mesh>
         )
     }
-
 
     return (
         <div style={{
