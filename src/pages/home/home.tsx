@@ -6,6 +6,7 @@ const Home = () => {
     const mediaQuery = useMediaQuery('(max-width:1050px)');
     return (
         <Box
+            component={"div"}
             height={'calc(100vh - 11.5em)'}
         >
             <Grid container height={'100%'}>

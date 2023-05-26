@@ -62,7 +62,7 @@ function App() {
       />
 
       <Box
-        // @ts-ignore
+        component={"div"}
         onTouchStart={mediaQuery ? handleTouchStart : () => { }}
         onTouchEnd={mediaQuery ? handleTouchEnd : () => { }}
       >

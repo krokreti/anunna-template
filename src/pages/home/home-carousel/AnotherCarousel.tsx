@@ -46,7 +46,7 @@ const AnotherCarousel = () => {
     }
 
     return (
-        <Box display={'flex'} height={'100%'} alignItems={'end'} position={'relative'}>
+        <Box display={"flex"} height={'100%'} alignItems={'end'} position={'relative'} component={"div"}>
             {!isSmallScreen && (
                 <CarouselButtons next={nextSlide} prev={prevSlide} />
             )}
@@ -118,7 +118,7 @@ const AnotherCarousel = () => {
                             // style={{ width: '255px;', border: '1px solid red' }}>
                             style={{ width: '255px;' }}>
                             {/* <Box display={"flex"} flexDirection={'column'} width={'255px'} border='1px solid blue' > */}
-                            <Box display={"flex"} flexDirection={'column'} width={'255px'} >
+                            <Box display={"flex"} flexDirection={'column'} width={'255px'} component={"div"} >
                                 {(index + 1).toString().padStart(2, '0')}
                                 <img src={img}
                                     alt={index.toString()}
@@ -143,6 +143,7 @@ const AnotherCarousel = () => {
                 )}
             </Swiper>
         </Box>
+
     )
 };
 

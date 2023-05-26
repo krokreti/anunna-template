@@ -57,7 +57,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
     function FadingImage({ currentBackground, nextBackground }: { currentBackground: string, nextBackground: string }) {
         const ref = useRef<any>()
         const viewport = useThree(state => state.viewport)
-        const [texture1, texture2, dispTexture] = useLoader(THREE.TextureLoader, [currentBackground, nextBackground, "../../public/displacements/15.png"]);
+        const [texture1, texture2, dispTexture] = useLoader(THREE.TextureLoader, [currentBackground, nextBackground, "/displacements/15.png"]);
         const [hovered, setHover] = useState(false)
         useFrame(() => {
             ref.current.dispFactor = THREE.MathUtils.lerp(ref.current.dispFactor, hovered ? 1 : 0, 0.0375)
@@ -75,7 +75,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
                 onUpdate={(_self: any) => {
                     setHover(true);
                 }}>
-                <planeBufferGeometry attach="geometry" />
+                <planeGeometry attach="geometry" />
 
                 {
                     // @ts-ignore

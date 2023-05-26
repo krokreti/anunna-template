@@ -15,6 +15,7 @@ const CarouselMobileButtons: React.FC<CarouselProps> = ({ next, prev }) => {
         position={'absolute'}
         width={'100%'}
         zIndex={10}
+        component={"div"}
     >
         <Stack direction={'row'} spacing={2} justifyContent={'space-between'} width={'100%'} >
             <CustomButton onClick={prev} variant='text' color='inherit' >
