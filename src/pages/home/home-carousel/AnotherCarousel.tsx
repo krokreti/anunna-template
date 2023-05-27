@@ -5,10 +5,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import CarouselButtons from "./CarouselButtons";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 // import { Navigation } from "swiper";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux-hooks";
-import { projectActions, slidesList } from "../../../store/project-slice";
+import { backgroundTotal, currentProjectStatus, projectActions, slidesList } from "../../../store/project-slice";
 
 // "https://d8cg12l7cuw6g.cloudfront.net/wp-content/uploads/2019/08/08172459/Wallpaper-vulca%CC%83o-para-celular-de-viajantes-travel-wanderlust-iphone-paisagem.jpeg",
 // "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -19,29 +19,33 @@ import { projectActions, slidesList } from "../../../store/project-slice";
 const AnotherCarousel = () => {
     const dispatch = useAppDispatch();
     const slides = (useAppSelector(slidesList));
+    const currentProject = (useAppSelector(currentProjectStatus));
+    const totalCount = useAppSelector(backgroundTotal);
     const [_activeSlide, _setActiveSlide] = useState(0);
     const isSmallScreen = useMediaQuery('(max-width:900px)');
     const swiperRef = useRef<any>();
-    // const swiper = useSwiper();
+
+    useEffect(() => {
+        swiperRef.current.activeIndex = currentProject.currentProject;
+    }, [currentProject, swiperRef])
 
     const nextSlide = () => {
+        if (currentProject.currentProject == (totalCount - 1)) {
+            return;
+        }
         swiperRef.current.slideNext();
-        // console.log(swiper);
-        // console.log(swiperRef.current);
-        console.log(swiperRef.current.activeIndex)
-        console.log(swiperRef.current.realIndex)
-        dispatch(projectActions.changeProject(swiperRef.current.activeIndex));
+        dispatch(projectActions.changeProject(currentProject.currentProject + 1));
     }
 
     const prevSlide = () => {
+        if (currentProject.currentProject == 0) {
+            return;
+        }
         swiperRef.current.slidePrev();
-        console.log(swiperRef.current.activeIndex);
-        console.log(swiperRef.current.realIndex);
-        dispatch(projectActions.changeProject(swiperRef.current.activeIndex));
+        dispatch(projectActions.changeProject(currentProject.currentProject - 1));
     }
 
     const handleSlideClick = (index: number) => {
-        console.log(index);
         dispatch(projectActions.changeProject(index));
     }
 
@@ -115,9 +119,7 @@ const AnotherCarousel = () => {
                         <SwiperSlide
                             key={index}
                             onClick={() => { handleSlideClick(index) }}
-                            // style={{ width: '255px;', border: '1px solid red' }}>
-                            style={{ width: '255px;' }}>
-                            {/* <Box display={"flex"} flexDirection={'column'} width={'255px'} border='1px solid blue' > */}
+                            style={{ width: '255px' }}>
                             <Box display={"flex"} flexDirection={'column'} width={'255px'} component={"div"} >
                                 {(index + 1).toString().padStart(2, '0')}
                                 <img src={img}

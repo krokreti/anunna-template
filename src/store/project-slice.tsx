@@ -24,9 +24,11 @@ const images = {
 }
 
 const initialProjectState: ProjectType = {
+    currentProject: 0,
     slides: images.slide,
     background: images.background[0],
     backgroundMobile: images.backgroundMobile[0]
+
 }
 
 const projectSlice = createSlice({
@@ -38,13 +40,15 @@ const projectSlice = createSlice({
             return {
                 slides: state.slides,
                 background: state.background,
-                backgroundMobile: state.backgroundMobile
+                backgroundMobile: state.backgroundMobile,
+                currentProject: state.currentProject
             };
         },
         changeProject: (state, action: PayloadAction<number>) => {
             // console.log(state.background);
-            state.background = images.background[action.payload];
-            state.backgroundMobile = images.backgroundMobile[action.payload];
+            state.currentProject = action.payload;
+            state.background = images.background[state.currentProject];
+            state.backgroundMobile = images.backgroundMobile[state.currentProject];
         },
     }
 });

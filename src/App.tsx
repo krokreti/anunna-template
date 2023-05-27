@@ -22,9 +22,11 @@ function App() {
 
   const increment = () => {
     if (backgroundCount == (totalCount - 1)) {
+      console.log(`${backgroundCount} opa chegou no total de ${(totalCount - 1)}`)
       return;
     }
     setBackgroundCount(backgroundCount + 1);
+    console.log(backgroundCount)
   }
 
   const decrement = () => {
