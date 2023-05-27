@@ -45,7 +45,6 @@ const projectSlice = createSlice({
             };
         },
         changeProject: (state, action: PayloadAction<number>) => {
-            // console.log(state.background);
             state.currentProject = action.payload;
             state.background = images.background[state.currentProject];
             state.backgroundMobile = images.backgroundMobile[state.currentProject];

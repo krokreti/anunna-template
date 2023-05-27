@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, memo } from "react"
 import { Canvas, extend, useFrame, useLoader, useThree } from "@react-three/fiber"
 import { shaderMaterial } from "@react-three/drei"
 
@@ -10,7 +10,7 @@ type AnimatedBackgroundType = {
 }
 
 
-const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
+const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
     const ImageFadeMaterial: any = shaderMaterial(
         {
             effectFactor: 1.2,
@@ -55,6 +55,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
     extend({ ImageFadeMaterial })
 
     function FadingImage({ currentBackground, nextBackground }: { currentBackground: string, nextBackground: string }) {
+        console.log(`${currentBackground} este background`)
         const ref = useRef<any>()
         const viewport = useThree(state => state.viewport)
         const [texture1, texture2, dispTexture] = useLoader(THREE.TextureLoader, [currentBackground, nextBackground, "/displacements/10.jpg"]);
@@ -97,6 +98,6 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = (props) => {
             </Canvas>
         </div>
     )
-}
+})
 
 export default AnimatedBackground;

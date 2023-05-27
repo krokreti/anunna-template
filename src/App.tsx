@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from './hooks/redux-hooks';
 import { backgroundTotal, currentProjectStatus, projectActions } from './store/project-slice';
 import { useRef, useState, useEffect } from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -14,6 +14,7 @@ function App() {
   const totalCount = useAppSelector(backgroundTotal);
   const mediaQuery = useMediaQuery('(max-width:1050px)');
   const touchStartXRef = useRef(0);
+  const location = useLocation();
   const [backgroundCount, setBackgroundCount] = useState<number>(0);
 
   useEffect(() => {
@@ -54,6 +55,8 @@ function App() {
     }
   };
 
+  var useTouchSlide = (mediaQuery && (location.pathname == '/'));
+
   return (
     <ThemeProvider theme={mainTheme}>
       <CssBaseline />
@@ -65,8 +68,8 @@ function App() {
 
       <Box
         component={"div"}
-        onTouchStart={mediaQuery ? handleTouchStart : () => { }}
-        onTouchEnd={mediaQuery ? handleTouchEnd : () => { }}
+        onTouchStart={useTouchSlide ? handleTouchStart : () => { }}
+        onTouchEnd={useTouchSlide ? handleTouchEnd : () => { }}
       >
         <Navbar />
         <Outlet />
