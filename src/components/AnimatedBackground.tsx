@@ -2,6 +2,8 @@ import * as THREE from "three"
 import { useEffect, useRef, useState, memo } from "react"
 import { Canvas, extend, useFrame, useLoader, useThree } from "@react-three/fiber"
 import { shaderMaterial } from "@react-three/drei"
+import { useLocation } from "react-router-dom"
+
 
 type AnimatedBackgroundType = {
     mediaQuery: boolean,
@@ -11,6 +13,7 @@ type AnimatedBackgroundType = {
 
 
 const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
+    const location = useLocation();
     const ImageFadeMaterial: any = shaderMaterial(
         {
             effectFactor: 1.2,
@@ -74,7 +77,10 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
                 scale={[viewport.width, viewport.height, 1]}
                 onContextMenu={(_e) => console.log('context menu')}
                 onUpdate={(_self: any) => {
-                    setHover(true);
+                    if (location.pathname === '/') {
+                        setHover(true);
+
+                    }
                 }}>
                 <planeGeometry attach="geometry" />
 

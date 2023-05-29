@@ -3,6 +3,7 @@ import { Box, Button, Dialog, DialogActions, DialogContent } from "@mui/material
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CustomButton from '../../../components/CustomButton';
 import YoutubeVideo from '../../../components/YoutubeVideo';
+import { motion } from "framer-motion";
 
 const VideoDialog: React.FC<{ open: boolean, close: () => void }> = ({ open, close }) => {
 
@@ -35,27 +36,35 @@ const ProjectVideo = () => {
     }
 
     return (
-        <Box
-            component={'div'}
-            height={'100%'}
-            display={'flex'}
-            justifyContent={'center'}
-            alignItems={'center'}
+        <motion.div
+            style={{ height: '100%' }}
+            initial={{ opacity: 0, }}
+            animate={{ opacity: 1, }}
+            exit={{ opacity: 0, transition: { duration: 1 } }}
+            transition={{ duration: 1 }}
         >
-            <Button
-                variant="contained"
-                color="inherit"
-                sx={{
-                    border: '10px solid grey',
-                    borderRadius: 40,
-                    p: 1
-                }}
-                onClick={handleOpenDialog}
+            <Box
+                component={'div'}
+                height={'100%'}
+                display={'flex'}
+                justifyContent={'center'}
+                alignItems={'center'}
             >
-                <PlayArrowIcon sx={{ color: '#161616', fontSize: 30 }} />
-            </Button>
-            <VideoDialog open={open} close={handleCloseDialog} />
-        </Box>
+                <Button
+                    variant="contained"
+                    color="inherit"
+                    sx={{
+                        border: '10px solid grey',
+                        borderRadius: 40,
+                        p: 1
+                    }}
+                    onClick={handleOpenDialog}
+                >
+                    <PlayArrowIcon sx={{ color: '#161616', fontSize: 30 }} />
+                </Button>
+                <VideoDialog open={open} close={handleCloseDialog} />
+            </Box>
+        </motion.div>
     )
 }
 

@@ -61,6 +61,7 @@ function App() {
     <ThemeProvider theme={mainTheme}>
       <CssBaseline />
       <AnimatedBackground
+        key={'123'}
         mediaQuery={mediaQuery}
         background={mediaQuery ? background.backgroundMobile : background.background}
         nextBackground={mediaQuery ? background.backgroundMobile : background.background}
