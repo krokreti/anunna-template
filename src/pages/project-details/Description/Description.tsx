@@ -5,10 +5,20 @@ import CustomButton from "../../../components/CustomButton";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { motion } from "framer-motion";
+import PdfDialog from '../../../components/PdfDialog';
 
 const Description = () => {
     const theme = useTheme();
     const [favorite, setFavorite] = useState(false);
+    const [open, setOpen] = useState(false);
+
+    const handleOpenDialog = () => {
+        setOpen(true);
+    }
+
+    const handleCloseDialog = () => {
+        setOpen(false);
+    }
 
     const onFavoriteClick = () => {
         setFavorite(!favorite);
@@ -37,7 +47,7 @@ const Description = () => {
                         para esse mercado que já é uma realidade.</Typography>
                 </Stack>
                 <Stack direction={'row'} gap={2} mt={5}>
-                    <CustomButton onClick={() => { console.log('play') }}
+                    <CustomButton onClick={handleOpenDialog}
                         children={'Ver Projeto'}
                         variant="outlined"
                         endIcon={<PlayArrowIcon color="primary" />}
@@ -63,6 +73,7 @@ const Description = () => {
                     />
                 </Stack>
             </Box>
+            <PdfDialog open={open} close={handleCloseDialog} />
         </motion.div>
     )
 }

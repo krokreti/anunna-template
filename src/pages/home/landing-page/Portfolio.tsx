@@ -1,14 +1,25 @@
+import { useState } from 'react';
 import { Typography, Box, Stack, useTheme, useMediaQuery } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CustomButton from "../../../components/CustomButton";
 import thetryumExpansion from '../../../../public/01-ThetryumExpansion.svg';
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import VideoDialog from "../../../components/VideoDialog";
 
 const Portfolio = () => {
     const navigate = useNavigate();
     const theme = useTheme();
     const mediaQuery = useMediaQuery('(max-width:900px)');
+    const [open, setOpen] = useState(false);
+
+    const handleOpenDialog = () => {
+        setOpen(true);
+    }
+
+    const handleCloseDialog = () => {
+        setOpen(false);
+    }
 
     const navigateToProject = () => {
         navigate('project-details/1');
@@ -42,7 +53,7 @@ const Portfolio = () => {
                         fontSize: '1.2em',
                         borderRadius: '11px'
                     }} />
-                    <CustomButton onClick={() => { console.log('play') }}
+                    <CustomButton onClick={handleOpenDialog}
                         children={'Play'}
                         variant="outlined"
                         endIcon={<PlayArrowIcon color="primary" />}
@@ -56,6 +67,7 @@ const Portfolio = () => {
                         }} />
                 </Stack>
             </Box>
+            <VideoDialog close={handleCloseDialog} open={open} videoUrl='twermV6UDmQ' />
         </motion.div>
     )
 }

@@ -61,7 +61,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
         console.log(`${currentBackground} este background`)
         const ref = useRef<any>()
         const viewport = useThree(state => state.viewport)
-        const [texture1, texture2, dispTexture] = useLoader(THREE.TextureLoader, [currentBackground, nextBackground, "/displacements/10.jpg"]);
+        const [texture1, texture2, dispTexture] = useLoader(THREE.TextureLoader, [currentBackground, nextBackground, "/displacements/15.png"]);
         const [hovered, setHover] = useState(false)
         useFrame(() => {
             ref.current.dispFactor = THREE.MathUtils.lerp(ref.current.dispFactor, hovered ? 1 : 0, 0.0375)
