@@ -71,11 +71,13 @@ const AnotherCarousel = () => {
                     <CarouselButtons next={nextSlide} prev={prevSlide} />
                 )}
                 <Swiper
-                    spaceBetween={30}
+                    spaceBetween={10}
                     slidesPerView={1}
 
                     // loop={true}
                     navigation={isSmallScreen}
+                    centeredSlides={true}
+
                     // modules={[Navigation]}
                     pagination={{
                         clickable: true,
@@ -118,7 +120,7 @@ const AnotherCarousel = () => {
                             autoHeight: false,
                         },
                         1850: {
-                            slidesPerView: 3.5,
+                            slidesPerView: 3,
                             spaceBetween: 0,
                             autoHeight: false,
                         },

@@ -29,7 +29,7 @@ const Router = () => {
 
     return (
         <AnimatePresence mode='wait'>
-            {React.cloneElement(element, { key: location.pathname })}
+            {React.cloneElement(element, { key: location.state })}
             {/* {React.cloneElement(element,)} */}
         </AnimatePresence>
 
