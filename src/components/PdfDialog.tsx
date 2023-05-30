@@ -11,7 +11,7 @@ const PdfDialog: React.FC<{ open: boolean, close: () => void, pdfUrl?: string }>
             fullScreen
         >
             <DialogContent>
-                <iframe src="../../public/pdf/00.pdf"
+                <iframe src="/pdf/00.pdf"
                     width="100%"
                     height="100%"
                     allowFullScreen></iframe>
