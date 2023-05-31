@@ -3,14 +3,15 @@ import mainTheme from './theme/Theme';
 import { CssBaseline, Box, useMediaQuery } from '@mui/material';
 import Navbar from './components/layout/Navbar';
 import { useAppDispatch, useAppSelector } from './hooks/redux-hooks';
-import { backgroundTotal, currentProjectStatus, projectActions } from './store/project-slice';
+import { backgroundTotal, currentProject, currentProjectStatus, projectActions } from './store/project-slice';
 import { useRef, useState, useEffect } from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
 import { Outlet, useLocation } from 'react-router-dom';
 
 function App() {
   const dispatch = useAppDispatch();
-  const background = useAppSelector(currentProjectStatus);
+  // const background = useAppSelector(currentProjectStatus);
+  const project = useAppSelector(currentProject);
   const totalCount = useAppSelector(backgroundTotal);
   const mediaQuery = useMediaQuery('(max-width:1050px)');
   const touchStartXRef = useRef(0);
@@ -23,11 +24,9 @@ function App() {
 
   const increment = () => {
     if (backgroundCount == (totalCount - 1)) {
-      console.log(`${backgroundCount} opa chegou no total de ${(totalCount - 1)}`)
       return;
     }
     setBackgroundCount(backgroundCount + 1);
-    console.log(backgroundCount)
   }
 
   const decrement = () => {
@@ -63,8 +62,8 @@ function App() {
       <AnimatedBackground
         key={'123'}
         mediaQuery={mediaQuery}
-        background={mediaQuery ? background.backgroundMobile : background.background}
-        nextBackground={mediaQuery ? background.backgroundMobile : background.background}
+        background={mediaQuery ? project.mobile : project.desktop}
+        nextBackground={mediaQuery ? project.mobile : project.desktop}
       />
 
       <Box

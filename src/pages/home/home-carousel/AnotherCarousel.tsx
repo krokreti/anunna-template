@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from "../../../hooks/redux-hooks";
 import { backgroundTotal, currentProjectStatus, projectActions, slidesList } from "../../../store/project-slice";
 import { motion, Variants } from "framer-motion";
 
+
 // "https://d8cg12l7cuw6g.cloudfront.net/wp-content/uploads/2019/08/08172459/Wallpaper-vulca%CC%83o-para-celular-de-viajantes-travel-wanderlust-iphone-paisagem.jpeg",
 // "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 // "https://i.pinimg.com/originals/2f/31/4c/2f314ca9f056e2dda005cd7989622e23.jpg",

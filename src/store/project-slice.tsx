@@ -23,11 +23,39 @@ const images = {
     ],
 }
 
+const projectArray = [
+    {
+        id: '00',
+        desktop: "/project-images/00.jpg",
+        mobile: '/mobile-images/00.jpg',
+        title: "/title/00.svg",
+    },
+    {
+        id: '01',
+        desktop: "/project-images/01.png",
+        mobile: '/mobile-images/01.jpeg',
+        title: "/title/01.svg",
+    },
+    {
+        id: '02',
+        desktop: "/project-images/02.jpg",
+        mobile: '/mobile-images/02.jpg',
+        title: "/title/02.svg",
+    },
+    {
+        id: '03',
+        desktop: "/project-images/03.jpg",
+        mobile: '/mobile-images/03.jpeg',
+        title: "/title/03.svg",
+    },
+];
+
 const initialProjectState: ProjectType = {
     currentProject: 0,
     slides: images.slide,
     background: images.background[0],
-    backgroundMobile: images.backgroundMobile[0]
+    backgroundMobile: images.backgroundMobile[0],
+    project: projectArray[0]
 
 }
 
@@ -41,19 +69,22 @@ const projectSlice = createSlice({
                 slides: state.slides,
                 background: state.background,
                 backgroundMobile: state.backgroundMobile,
-                currentProject: state.currentProject
+                currentProject: state.currentProject,
+                project: state.project
             };
         },
         changeProject: (state, action: PayloadAction<number>) => {
             state.currentProject = action.payload;
-            state.background = images.background[state.currentProject];
-            state.backgroundMobile = images.backgroundMobile[state.currentProject];
+            // state.background = images.background[state.currentProject];
+            // state.backgroundMobile = images.backgroundMobile[state.currentProject];
+            state.project = projectArray[state.currentProject]
         },
     }
 });
 
 export const projectActions = projectSlice.actions;
 export const currentProjectStatus = (state: RootState) => state.project;
+export const currentProject = (state: RootState) => state.project.project;
 export const slidesList = (state: RootState) => state.project.slides;
 export const backgroundTotal = () => images.backgroundMobile.length;
 export default projectSlice.reducer;

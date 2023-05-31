@@ -58,7 +58,6 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
     extend({ ImageFadeMaterial })
 
     function FadingImage({ currentBackground, nextBackground }: { currentBackground: string, nextBackground: string }) {
-        console.log(`${currentBackground} este background`)
         const ref = useRef<any>()
         const viewport = useThree(state => state.viewport)
         const [texture1, texture2, dispTexture] = useLoader(THREE.TextureLoader, [currentBackground, nextBackground, "/displacements/15.png"]);
