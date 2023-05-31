@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Typography, Box, Stack, useTheme, useMediaQuery } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CustomButton from "../../../components/CustomButton";
-import thetryumExpansion from '/title/00.svg';
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import VideoDialog from "../../../components/VideoDialog";
