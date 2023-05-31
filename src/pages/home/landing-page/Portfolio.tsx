@@ -6,12 +6,16 @@ import thetryumExpansion from '/title/00.svg';
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import VideoDialog from "../../../components/VideoDialog";
+import { currentProject } from '../../../store/project-slice';
+import { useAppSelector } from '../../../hooks/redux-hooks';
 
 const Portfolio = () => {
     const navigate = useNavigate();
     const theme = useTheme();
     const mediaQuery = useMediaQuery('(max-width:900px)');
     const [open, setOpen] = useState(false);
+    const project = useAppSelector(currentProject);
+    console.log(project);
 
     const handleOpenDialog = () => {
         setOpen(true);
@@ -36,15 +40,15 @@ const Portfolio = () => {
             <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} component={"div"} >
                 <Typography variant="h4" fontWeight={'bold'} mb={8} >Portfólio</Typography>
                 <Stack direction={'row'} display={'flex'} alignItems={'center'} gap={2} width={'100%'} mt={4}>
-                    <img src={thetryumExpansion} alt="thetryum" width={mediaQuery ? 270 : 500} />
+                    <img src={project.title} alt="thetryum" width={mediaQuery ? 270 : 500} />
                 </Stack>
                 <Stack direction={{ xs: 'column', sm: 'row' }} mt={3} p={0}>
                     <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Gênero do projeto:</Typography>
-                    <Typography variant="h6" ml={{ xs: 0, sm: 1 }} color={theme.palette.text.secondary} >Branding, ID Visual.</Typography>
+                    <Typography variant="h6" ml={{ xs: 0, sm: 1 }} color={theme.palette.text.secondary} >{project.gender}</Typography>
                 </Stack>
                 <Stack marginY={6}>
                     <Typography fontWeight={'bold'} >Destaques do projeto:</Typography>
-                    <Typography color={theme.palette.text.secondary} >Behance Fotografia 3D, Movimento 3D.</Typography>
+                    <Typography color={theme.palette.text.secondary} >{project.highlights}</Typography>
                 </Stack>
                 <Stack direction={{ xs: 'column', sm: 'row' }} gap={2} mt={5}>
                     <CustomButton onClick={navigateToProject} children={'Saber mais'} sx={{

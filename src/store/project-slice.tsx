@@ -29,24 +29,32 @@ const projectArray = [
         desktop: "/project-images/00.jpg",
         mobile: '/mobile-images/00.jpg',
         title: "/title/00.svg",
+        gender: 'Branding, ID Visual.',
+        highlights: 'Behance Fotografia 3D, Movimento 3D.',
     },
     {
         id: '01',
         desktop: "/project-images/01.png",
         mobile: '/mobile-images/01.jpeg',
         title: "/title/01.svg",
+        gender: 'Design.',
+        highlights: 'Design de vídeos, logos e fotos.',
     },
     {
         id: '02',
         desktop: "/project-images/02.jpg",
         mobile: '/mobile-images/02.jpg',
         title: "/title/02.svg",
+        gender: 'Programação.',
+        highlights: 'Desenvolvimento mobile',
     },
     {
         id: '03',
         desktop: "/project-images/03.jpg",
         mobile: '/mobile-images/03.jpeg',
         title: "/title/03.svg",
+        gender: 'Marketing.',
+        highlights: 'Marketing multinível.',
     },
 ];
 
@@ -55,8 +63,7 @@ const initialProjectState: ProjectType = {
     slides: images.slide,
     background: images.background[0],
     backgroundMobile: images.backgroundMobile[0],
-    project: projectArray[0]
-
+    project: projectArray[0],
 }
 
 const projectSlice = createSlice({

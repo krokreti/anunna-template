@@ -3,7 +3,8 @@ type PortfolioType = {
     desktop: string;
     mobile: string;
     title: string;
-
+    gender: string;
+    highlights: string;
 }
 
 export default PortfolioType;

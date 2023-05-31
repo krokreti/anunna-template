@@ -3,14 +3,13 @@ import mainTheme from './theme/Theme';
 import { CssBaseline, Box, useMediaQuery } from '@mui/material';
 import Navbar from './components/layout/Navbar';
 import { useAppDispatch, useAppSelector } from './hooks/redux-hooks';
-import { backgroundTotal, currentProject, currentProjectStatus, projectActions } from './store/project-slice';
+import { backgroundTotal, currentProject, projectActions } from './store/project-slice';
 import { useRef, useState, useEffect } from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
 import { Outlet, useLocation } from 'react-router-dom';
 
 function App() {
   const dispatch = useAppDispatch();
-  // const background = useAppSelector(currentProjectStatus);
   const project = useAppSelector(currentProject);
   const totalCount = useAppSelector(backgroundTotal);
   const mediaQuery = useMediaQuery('(max-width:1050px)');

@@ -5,7 +5,7 @@ interface ProjectType {
     background: string,
     backgroundMobile: string,
     currentProject: number
-    project: PortfolioType
+    project: PortfolioType,
 }
 
 export default ProjectType;

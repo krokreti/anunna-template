@@ -137,6 +137,7 @@ const AnotherCarousel = () => {
 
                         slides!.map((img: string, index: number) => (
                             <motion.li
+                                key={index}
                                 variants={animation}
                             >
                                 <SwiperSlide
