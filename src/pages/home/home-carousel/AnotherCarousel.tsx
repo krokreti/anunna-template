@@ -1,22 +1,13 @@
 import { Box, useMediaQuery } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import CarouselButtons from "./CarouselButtons";
 import { useRef, useState, useEffect } from "react";
-// import { Navigation } from "swiper";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux-hooks";
 import { backgroundTotal, currentProjectStatus, projectActions, slidesList } from "../../../store/project-slice";
 import { motion, Variants } from "framer-motion";
-
-
-// "https://d8cg12l7cuw6g.cloudfront.net/wp-content/uploads/2019/08/08172459/Wallpaper-vulca%CC%83o-para-celular-de-viajantes-travel-wanderlust-iphone-paisagem.jpeg",
-// "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-// "https://i.pinimg.com/originals/2f/31/4c/2f314ca9f056e2dda005cd7989622e23.jpg",
-// "https://w.forfun.com/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg",
-// "https://i.pinimg.com/736x/db/cc/65/dbcc656891295a71e99317c18e69a487--phone-wallpapers-smartphone.jpg"
 
 const AnotherCarousel = () => {
     const dispatch = useAppDispatch();
@@ -67,9 +58,9 @@ const AnotherCarousel = () => {
             exit={{ opacity: 0, x: 200, transition: { duration: 1 } }}
             transition={{ duration: 1 }}
         >
-            <Box display={"flex"} height={'100%'} alignItems={'end'} position={'relative'} component={"div"}>
+            <Box display={"flex"} height={'100%'} alignItems={'end'} position={'relative'} component={"div"} >
                 {!isSmallScreen && (
-                    <CarouselButtons next={nextSlide} prev={prevSlide} />
+                    <CarouselButtons next={nextSlide} prev={prevSlide} currentProject={currentProject.currentProject} totalProjects={totalCount} />
                 )}
                 <Swiper
                     spaceBetween={10}
@@ -91,32 +82,32 @@ const AnotherCarousel = () => {
 
                         },
                         1024: {
-                            slidesPerView: 1.7,
+                            slidesPerView: 1.1,
                             spaceBetween: 30,
                             autoHeight: false,
                         },
                         1100: {
-                            slidesPerView: 1.9,
+                            slidesPerView: 1.6,
                             spaceBetween: 30,
                             autoHeight: false,
                         },
                         1200: {
-                            slidesPerView: 2.1,
+                            slidesPerView: 1.9,
                             spaceBetween: 30,
                             autoHeight: false,
                         },
                         1350: {
-                            slidesPerView: 2.5,
+                            slidesPerView: 2.2,
                             spaceBetween: 50,
                             autoHeight: false,
                         },
                         1500: {
-                            slidesPerView: 2.7,
+                            slidesPerView: 2.3,
                             spaceBetween: 0,
                             autoHeight: false,
                         },
                         1650: {
-                            slidesPerView: 3,
+                            slidesPerView: 2.7,
                             spaceBetween: 0,
                             autoHeight: false,
                         },

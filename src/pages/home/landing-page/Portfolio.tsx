@@ -14,7 +14,6 @@ const Portfolio = () => {
     const mediaQuery = useMediaQuery('(max-width:900px)');
     const [open, setOpen] = useState(false);
     const project = useAppSelector(currentProject);
-    console.log(project);
 
     const handleOpenDialog = () => {
         setOpen(true);

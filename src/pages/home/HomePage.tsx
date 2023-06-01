@@ -13,7 +13,7 @@ const HomePage = () => {
                 <Grid item xs={12} md={5} pl={mediaQuery ? 3 : 9} pb={6} zIndex={1} pr={mediaQuery ? 3 : 0}>
                     <Portfolio />
                 </Grid>
-                <Grid item xs={12} md={7} pb={6} hidden={mediaQuery}>
+                <Grid item xs={12} md={7} pb={6} hidden={mediaQuery} >
                     <AnotherCarousel />
                 </Grid>
             </Grid>
