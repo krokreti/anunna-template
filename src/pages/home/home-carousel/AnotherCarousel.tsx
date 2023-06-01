@@ -7,7 +7,7 @@ import CarouselButtons from "./CarouselButtons";
 import { useRef, useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux-hooks";
 import { backgroundTotal, currentProjectStatus, projectActions, slidesList } from "../../../store/project-slice";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 const AnotherCarousel = () => {
     const dispatch = useAppDispatch();
@@ -17,14 +17,6 @@ const AnotherCarousel = () => {
     const [_activeSlide, _setActiveSlide] = useState(0);
     const isSmallScreen = useMediaQuery('(max-width:900px)');
     const swiperRef = useRef<any>();
-    const animation: Variants = {
-        open: {
-            opacity: 1,
-            y: 0,
-            transition: { type: "spring", stiffness: 300, damping: 24 }
-        },
-        closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
-    };
 
     useEffect(() => {
         swiperRef.current.activeIndex = currentProject.currentProject;
@@ -127,25 +119,20 @@ const AnotherCarousel = () => {
                     {!isSmallScreen && (
 
                         slides!.map((img: string, index: number) => (
-                            <motion.li
+                            <SwiperSlide
                                 key={index}
-                                variants={animation}
-                            >
-                                <SwiperSlide
-                                    key={index}
-                                    onClick={() => { handleSlideClick(index) }}
-                                    style={{ width: '255px' }}>
-                                    <Box display={"flex"} flexDirection={'column'} width={'255px'} component={"div"} >
-                                        {(index + 1).toString().padStart(2, '0')}
-                                        <img src={img}
-                                            alt={index.toString()}
-                                            width={'100%'}
-                                            height={'419px'}
-                                            style={{ borderRadius: 20, }}
-                                        />
-                                    </Box>
-                                </SwiperSlide>
-                            </motion.li>
+                                onClick={() => { handleSlideClick(index) }}
+                                style={{ width: '255px' }}>
+                                <Box display={"flex"} flexDirection={'column'} width={'255px'} component={"div"} >
+                                    {(index + 1).toString().padStart(2, '0')}
+                                    <img src={img}
+                                        alt={index.toString()}
+                                        width={'100%'}
+                                        height={'419px'}
+                                        style={{ borderRadius: 20, }}
+                                    />
+                                </Box>
+                            </SwiperSlide>
                         ))
                     )}
                     {isSmallScreen && (
