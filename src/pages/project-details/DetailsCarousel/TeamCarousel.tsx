@@ -68,7 +68,7 @@ const TeamCarousel: React.FC<{
                                 alt={index.toString()}
                                 width={'100%'}
                                 height={'134px'}
-                                style={{ borderRadius: 20, }}
+                                style={{ borderRadius: 20 }}
                             />
                             <Box
                                 component={'div'}

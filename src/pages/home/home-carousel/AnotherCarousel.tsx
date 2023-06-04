@@ -21,13 +21,15 @@ const AnotherCarousel = () => {
     useEffect(() => {
         swiperRef.current.activeIndex = currentProject.currentProject;
     }, [currentProject, swiperRef])
-
+    //timeout é por conta da animação do threejs que cortou a animação do slide
     const nextSlide = () => {
         if (currentProject.currentProject == (totalCount - 1)) {
             return;
         }
         swiperRef.current.slideNext();
-        dispatch(projectActions.changeProject(currentProject.currentProject + 1));
+        setTimeout(() => {
+            dispatch(projectActions.changeProject(currentProject.currentProject + 1));
+        }, 200);
     }
 
     const prevSlide = () => {
@@ -35,11 +37,15 @@ const AnotherCarousel = () => {
             return;
         }
         swiperRef.current.slidePrev();
-        dispatch(projectActions.changeProject(currentProject.currentProject - 1));
+        setTimeout(() => {
+            dispatch(projectActions.changeProject(currentProject.currentProject - 1));
+        }, 200);
     }
 
     const handleSlideClick = (index: number) => {
-        dispatch(projectActions.changeProject(index));
+        setTimeout(() => {
+            dispatch(projectActions.changeProject(index));
+        }, 200);
     }
 
     return (
