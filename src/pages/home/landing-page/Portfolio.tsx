@@ -24,7 +24,7 @@ const Portfolio = () => {
     }
 
     const navigateToProject = () => {
-        navigate('project-details/1');
+        navigate(`project-details/${project.id}`);
     }
 
     return (

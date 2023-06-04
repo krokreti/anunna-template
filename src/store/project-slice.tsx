@@ -6,7 +6,7 @@ const images = {
     slide: [
         "https://d8cg12l7cuw6g.cloudfront.net/wp-content/uploads/2019/08/08172459/Wallpaper-vulca%CC%83o-para-celular-de-viajantes-travel-wanderlust-iphone-paisagem.jpeg",
         "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "https://i.pinimg.com/originals/2f/31/4c/2f314ca9f056e2dda005cd7989622e23.jpg",
+        "https://i.pinimgUrl.com/originals/2f/31/4c/2f314ca9f056e2dda005cd7989622e23.jpg",
         "https://w.forfun.com/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg",
     ],
     backgroundMobile: [
@@ -31,6 +31,33 @@ const projectArray = [
         title: "/title/00.svg",
         gender: 'Branding, ID Visual.',
         highlights: 'Behance Fotografia 3D, Movimento 3D.',
+        description: ` A thetryum inova os processos do mundo real,
+                        através de contratos inteligentes dentro da blockchain.
+                        "Tokenizamos" a sua empresa ou ativos e os preparamos
+                        para esse mercado que já é uma realidade.`,
+        roles: [
+            {
+                name: 'Lana Artros',
+                role: 'Animador 3D.',
+                description: `Um Animador 3D é um profissional que cria modelos digitais
+                        em três dimensões, tanto numa perspectiva artística como
+                        informativa. Assim, podem trabalhar nas áreas do cinema e
+                        da televisão, ou ainda no mundo dos videojogos e da publicidade.`,
+                imgUrl: 'https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2017-09/shutterstock_243101992.jpg?itok=sxfMiTsD',
+            },
+            {
+                name: 'Charles Dawnton',
+                role: 'CEO',
+                description: 'Gerente da Empresa',
+                imgUrl: 'https://assets1.cbsnewsstatic.com/hub/i/2018/11/06/0c1af1b8-155a-458e-b105-78f1e7344bf4/2018-11-06t054310z-1334124005-rc1be15a8050-rtrmadp-3-people-sexiest-man.jpg',
+            },
+            {
+                name: 'Harry Hopkins',
+                role: 'Gerente de Projetos',
+                description: 'Gerente da Empresa',
+                imgUrl: 'https://firstpersonarts.org/wp-content/uploads/2021/09/MV5BMzI4ZWMzZTQtNjI1My00ZTQxLTg2MDMtYTUwYTMyN2Y0ZWM4XkEyXkFqcGdeQXVyNjUzMjUyODU@._V1_.jpg',
+            },
+        ]
     },
     {
         id: '01',
@@ -39,6 +66,21 @@ const projectArray = [
         title: "/title/01.svg",
         gender: 'Design.',
         highlights: 'Design de vídeos, logos e fotos.',
+        description: '',
+        roles: [
+            {
+                name: 'Nome 1',
+                role: 'Animador 3D.',
+                description: 'Este profissional faz isso, isso e isso.',
+                imgUrl: 'https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2017-09/shutterstock_243101992.jpg?itok=sxfMiTsD',
+            },
+            {
+                name: 'Nome 2',
+                role: 'CEO',
+                description: 'Gerente da Empresa',
+                imgUrl: 'https://assets1.cbsnewsstatic.com/hub/i/2018/11/06/0c1af1b8-155a-458e-b105-78f1e7344bf4/2018-11-06t054310z-1334124005-rc1be15a8050-rtrmadp-3-people-sexiest-man.jpg',
+            },
+        ]
     },
     {
         id: '02',
@@ -47,6 +89,21 @@ const projectArray = [
         title: "/title/02.svg",
         gender: 'Programação.',
         highlights: 'Desenvolvimento mobile',
+        description: '',
+        roles: [
+            {
+                name: 'Nome 1',
+                role: 'Animador 3D.',
+                description: 'Este profissional faz isso, isso e isso.',
+                imgUrl: 'https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2017-09/shutterstock_243101992.jpg?itok=sxfMiTsD',
+            },
+            {
+                name: 'Nome 2',
+                role: 'CEO',
+                description: 'Gerente da Empresa',
+                imgUrl: 'https://assets1.cbsnewsstatic.com/hub/i/2018/11/06/0c1af1b8-155a-458e-b105-78f1e7344bf4/2018-11-06t054310z-1334124005-rc1be15a8050-rtrmadp-3-people-sexiest-man.jpg',
+            },
+        ]
     },
     {
         id: '03',
@@ -55,6 +112,21 @@ const projectArray = [
         title: "/title/03.svg",
         gender: 'Marketing.',
         highlights: 'Marketing multinível.',
+        description: '',
+        roles: [
+            {
+                name: 'Nome 1',
+                role: 'Animador 3D.',
+                description: 'Este profissional faz isso, isso e isso.',
+                imgUrl: 'https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2017-09/shutterstock_243101992.jpg?itok=sxfMiTsD',
+            },
+            {
+                name: 'Nome 2',
+                role: 'CEO',
+                description: 'Gerente da Empresa',
+                imgUrl: 'https://assets1.cbsnewsstatic.com/hub/i/2018/11/06/0c1af1b8-155a-458e-b105-78f1e7344bf4/2018-11-06t054310z-1334124005-rc1be15a8050-rtrmadp-3-people-sexiest-man.jpg',
+            },
+        ]
     },
 ];
 
@@ -64,6 +136,7 @@ const initialProjectState: ProjectType = {
     background: images.background[0],
     backgroundMobile: images.backgroundMobile[0],
     project: projectArray[0],
+    allProjects: projectArray,
 }
 
 const projectSlice = createSlice({
@@ -71,13 +144,13 @@ const projectSlice = createSlice({
     initialState: initialProjectState,
     reducers: {
         getProject: (state): ProjectType => {
-            // console.log(state);
             return {
                 slides: state.slides,
                 background: state.background,
                 backgroundMobile: state.backgroundMobile,
                 currentProject: state.currentProject,
-                project: state.project
+                project: state.project,
+                allProjects: state.allProjects
             };
         },
         changeProject: (state, action: PayloadAction<number>) => {
@@ -92,6 +165,7 @@ const projectSlice = createSlice({
 export const projectActions = projectSlice.actions;
 export const currentProjectStatus = (state: RootState) => state.project;
 export const currentProject = (state: RootState) => state.project.project;
+export const projectsArray = (state: RootState) => state.project.allProjects;
 export const slidesList = (state: RootState) => state.project.slides;
 export const backgroundTotal = () => images.backgroundMobile.length;
 export default projectSlice.reducer;

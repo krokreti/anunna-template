@@ -1,3 +1,5 @@
+import Role from "./Role";
+
 type PortfolioType = {
     id: string;
     desktop: string;
@@ -5,6 +7,8 @@ type PortfolioType = {
     title: string;
     gender: string;
     highlights: string;
+    description: string;
+    roles: Role[],
 }
 
 export default PortfolioType;

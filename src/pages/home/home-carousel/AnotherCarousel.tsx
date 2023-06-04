@@ -57,15 +57,8 @@ const AnotherCarousel = () => {
                 <Swiper
                     spaceBetween={10}
                     slidesPerView={1}
-
-                    // loop={true}
                     navigation={isSmallScreen}
                     centeredSlides={true}
-
-                    // modules={[Navigation]}
-                    pagination={{
-                        clickable: true,
-                    }}
                     breakpoints={{
                         900: {
                             slidesPerView: 1,

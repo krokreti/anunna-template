@@ -11,10 +11,14 @@ const PdfDialog: React.FC<{ open: boolean, close: () => void, pdfUrl?: string }>
             fullScreen
         >
             <DialogContent>
-                <iframe src="/pdf/00.pdf"
+                <iframe src="/pdf/00.pdf#toolbar=0&navpanes=0"
                     width="100%"
                     height="100%"
-                    allowFullScreen></iframe>
+                    scrolling="no"
+                    allowFullScreen
+                    frameBorder={0}
+                >
+                </iframe>
             </DialogContent>
             <DialogActions>
                 <CustomButton onClick={props.close} variant='text'>Fechar</CustomButton>
