@@ -39,22 +39,19 @@ const projectArray = [
             {
                 name: 'Lana Artros',
                 role: 'Animador 3D.',
-                description: `Um Animador 3D é um profissional que cria modelos digitais
-                        em três dimensões, tanto numa perspectiva artística como
-                        informativa. Assim, podem trabalhar nas áreas do cinema e
-                        da televisão, ou ainda no mundo dos videojogos e da publicidade.`,
+                description: `Um Animador 3D é um profissional que cria modelos digitais em três dimensões, tanto numa perspectiva artística como informativa. Assim, podem trabalhar nas áreas do cinema e da televisão, ou ainda no mundo dos videojogos e da publicidade.`,
                 imgUrl: 'https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2017-09/shutterstock_243101992.jpg?itok=sxfMiTsD',
             },
             {
                 name: 'Charles Dawnton',
                 role: 'CEO',
-                description: 'Gerente da Empresa',
+                description: `O CEO (Chief Executive Officer) é o principal executivo de uma empresa e desempenha um papel fundamental na definição da visão estratégica e no direcionamento geral da organização. Como líder máximo, o CEO é responsável por tomar decisões estratégicas importantes e garantir o bom funcionamento de todas as áreas da empresa.`,
                 imgUrl: 'https://assets1.cbsnewsstatic.com/hub/i/2018/11/06/0c1af1b8-155a-458e-b105-78f1e7344bf4/2018-11-06t054310z-1334124005-rc1be15a8050-rtrmadp-3-people-sexiest-man.jpg',
             },
             {
                 name: 'Harry Hopkins',
-                role: 'Gerente de Projetos',
-                description: 'Gerente da Empresa',
+                role: 'Scrum Master',
+                description: `O Scrum Master é um papel dentro da metodologia ágil Scrum, amplamente utilizada no gerenciamento de projetos de desenvolvimento de software. O Scrum Master atua como um facilitador e líder do processo Scrum, garantindo que a equipe siga as práticas e princípios do Scrum.`,
                 imgUrl: 'https://firstpersonarts.org/wp-content/uploads/2021/09/MV5BMzI4ZWMzZTQtNjI1My00ZTQxLTg2MDMtYTUwYTMyN2Y0ZWM4XkEyXkFqcGdeQXVyNjUzMjUyODU@._V1_.jpg',
             },
         ]
