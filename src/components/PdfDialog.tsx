@@ -1,19 +1,19 @@
 import { Dialog, DialogActions, DialogContent } from "@mui/material";
 import CustomButton from "./CustomButton";
 
-const PdfDialog: React.FC<{ open: boolean, close: () => void, pdfUrl?: string }> = (props) => {
+const PdfDialog: React.FC<{ open: boolean, close: () => void, pdfUrl?: string, id: string }> = (props) => {
 
     return (
         <Dialog
             open={props.open}
-            PaperProps={{ style: { backgroundColor: '#161616' } }}
+            PaperProps={{ style: { backgroundColor: '#161616', } }}
             fullWidth
             fullScreen
         >
             <DialogContent>
-                <iframe src="/pdf/00.pdf#toolbar=0&navpanes=0"
+                <iframe src={`/pdf/${props.id}.pdf#toolbar=0&navpanes=0`}
                     width="100%"
-                    height="100%"
+                    height="95%"
                     scrolling="no"
                     allowFullScreen
                     frameBorder={0}
