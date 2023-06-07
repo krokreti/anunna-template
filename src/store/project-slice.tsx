@@ -65,7 +65,7 @@ implemented in the animation.`,
         mobile: '/mobile-images/01.jpg',
         title: "/title/01.svg",
         gender: 'Design.',
-        highlights: 'Design de vídeos, logos e fotos.',
+        highlights: 'Video design and branding.',
         description: '',
         roles: [
             {
@@ -87,8 +87,8 @@ implemented in the animation.`,
         desktop: "/project-images/02.jpg",
         mobile: '/mobile-images/02.jpg',
         title: "/title/02.svg",
-        gender: 'Programação.',
-        highlights: 'Desenvolvimento mobile',
+        gender: 'Development.',
+        highlights: 'Mobile development, data science.',
         description: '',
         roles: [
             {
@@ -110,8 +110,8 @@ implemented in the animation.`,
         desktop: "/project-images/03.jpg",
         mobile: '/mobile-images/03.jpg',
         title: "/title/03.svg",
-        gender: 'Marketing.',
-        highlights: 'Marketing multinível.',
+        gender: 'Ads.',
+        highlights: 'Market of advertisiment.',
         description: '',
         roles: [
             {

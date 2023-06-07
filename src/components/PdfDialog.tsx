@@ -16,13 +16,12 @@ const PdfDialog: React.FC<{ open: boolean, close: () => void, pdfUrl?: string, i
                     height="95%"
                     scrolling="no"
                     allowFullScreen
-                    sandbox="allow-scripts allow-same-origin"
                     frameBorder={0}
                 >
                 </iframe>
             </DialogContent>
             <DialogActions>
-                <CustomButton onClick={props.close} variant='text'>Fechar</CustomButton>
+                <CustomButton onClick={props.close} variant='text'>Close</CustomButton>
             </DialogActions>
         </Dialog>
     )
