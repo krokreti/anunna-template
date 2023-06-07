@@ -41,15 +41,15 @@ const Portfolio = () => {
                     <img src={project.title} alt="thetryum" width={mediaQuery ? 270 : 500} />
                 </Stack>
                 <Stack direction={{ xs: 'column', sm: 'row' }} mt={3} p={0}>
-                    <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Gênero do projeto:</Typography>
+                    <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Project genre:</Typography>
                     <Typography variant="h6" ml={{ xs: 0, sm: 1 }} color={theme.palette.text.secondary} >{project.gender}</Typography>
                 </Stack>
                 <Stack marginY={6}>
-                    <Typography fontWeight={'bold'} >Destaques do projeto:</Typography>
+                    <Typography fontWeight={'bold'} >Project highlights:</Typography>
                     <Typography color={theme.palette.text.secondary} >{project.highlights}</Typography>
                 </Stack>
                 <Stack direction={{ xs: 'column', sm: 'row' }} gap={2} mt={5}>
-                    <CustomButton onClick={navigateToProject} children={'Saber mais'} sx={{
+                    <CustomButton onClick={navigateToProject} children={'View More'} sx={{
                         textTransform: 'none',
                         px: 6, py: 1.5,
                         fontSize: '1.2em',

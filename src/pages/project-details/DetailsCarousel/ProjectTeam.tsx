@@ -32,7 +32,7 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
         >
             <Box component={'div'} >
                 <Stack direction={'column'} >
-                    <Typography variant="h6" fontWeight={'bold'} mb={3}> Equipe do Projeto: </Typography>
+                    <Typography variant="h6" fontWeight={'bold'} mb={3}> Project Team: </Typography>
                     <TeamCarousel roles={project.roles} swiper={swiper} handleSlideChange={handleSlideChange} />
                     <Stack direction={'row'} my={3} >
                         <Box component={'div'}>
@@ -42,7 +42,7 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
                             <hr />
                         </Box>
                     </Stack>
-                    <Typography variant="h6" fontWeight={'bold'}> Função: </Typography>
+                    <Typography variant="h6" fontWeight={'bold'}> Role: </Typography>
                     <Typography variant="h6" color={theme.palette.text.secondary} style={{ fontSize: 16 }}>
                         {activeRole.role}
                     </Typography>

@@ -16,6 +16,7 @@ const PdfDialog: React.FC<{ open: boolean, close: () => void, pdfUrl?: string, i
                     height="95%"
                     scrolling="no"
                     allowFullScreen
+                    sandbox="allow-scripts allow-same-origin"
                     frameBorder={0}
                 >
                 </iframe>

@@ -38,11 +38,11 @@ const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
                 {/* <Typography variant="h3" fontWeight={'bold'}> Thetryum Expansion </Typography> */}
                 <img src={project.title} alt="thetryum" width={mediaQuery ? 270 : 500} />
                 <Stack direction={{ xs: 'column', sm: 'row' }} mt={2} p={0}>
-                    <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Gênero do projeto:</Typography>
+                    <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Project genre:</Typography>
                     <Typography variant="h6" ml={{ xs: 0, sm: 1 }} color={theme.palette.text.secondary} >{project.gender}</Typography>
                 </Stack>
                 <Stack marginY={4}>
-                    <Typography variant="h4" fontWeight={'bold'} display={'flex'} alignItems={'center'}> Descrição:</Typography>
+                    <Typography variant="h4" fontWeight={'bold'} display={'flex'} alignItems={'center'}> Description:</Typography>
                     <Typography variant="h6" display={'flex'} alignItems={'center'} style={{ fontSize: 16 }} >{project.description}</Typography>
                 </Stack>
                 <Stack direction={'row'} gap={2} mt={5}>

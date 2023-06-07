@@ -15,7 +15,7 @@ const VideoDialog: React.FC<{ open: boolean, close: () => void, videoUrl: string
                 <YoutubeVideo id={videoUrl}></YoutubeVideo>
             </DialogContent>
             <DialogActions>
-                <CustomButton onClick={close} variant='text'>Fechar</CustomButton>
+                <CustomButton onClick={close} variant='text'>Close</CustomButton>
             </DialogActions>
         </Dialog>
     )

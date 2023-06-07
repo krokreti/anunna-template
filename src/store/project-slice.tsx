@@ -4,10 +4,10 @@ import ProjectType from "../models/ProjectType";
 
 const images = {
     slide: [
-        "https://d8cg12l7cuw6g.cloudfront.net/wp-content/uploads/2019/08/08172459/Wallpaper-vulca%CC%83o-para-celular-de-viajantes-travel-wanderlust-iphone-paisagem.jpeg",
-        "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "https://e0.pxfuel.com/wallpapers/975/533/desktop-wallpaper-paper-walls-neon-plants-iphone-phone-galaxy-cool-neon-phone-thumbnail.jpg",
-        "https://w.forfun.com/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg",
+        "/slides/Carrossel-01.jpg",
+        "/slides/Carrossel-02.jpg",
+        "/slides/Carrossel-03.jpg",
+        "/slides/Carrossel-04.jpg",
     ],
     backgroundMobile: [
         "/mobile-images/00.jpg",
@@ -17,7 +17,7 @@ const images = {
     ],
     background: [
         "/project-images/00.jpg",
-        "/project-images/01.png",
+        "/project-images/01.jpg",
         "/project-images/02.jpg",
         "/project-images/03.jpg",
     ],
@@ -29,37 +29,40 @@ const projectArray = [
         desktop: "/project-images/00.jpg",
         mobile: '/mobile-images/00.jpg',
         title: "/title/00.svg",
-        gender: 'Branding, ID Visual.',
-        highlights: 'Behance Fotografia 3D, Movimento 3D.',
-        description: ` A thetryum inova os processos do mundo real,
-                        através de contratos inteligentes dentro da blockchain.
-                        "Tokenizamos" a sua empresa ou ativos e os preparamos
-                        para esse mercado que já é uma realidade.`,
+        gender: 'Video. Motion. Branding.',
+        highlights: 'Motion. VFX. Branding.',
+        description: `Thetryum Expansion is an exciting project that showcases Thetryum's
+global growth through inspiring videos.
+Featuring partner Anunna and her immersive site blocking experience,
+along with captivating artwork on Thetryum social media.
+Explore this journey of success, innovation and creativity in technology.`,
         roles: [
             {
-                name: 'Lana Artros',
-                role: 'Animador 3D.',
-                description: `Um Animador 3D é um profissional que cria modelos digitais em três dimensões, tanto numa perspectiva artística como informativa. Assim, podem trabalhar nas áreas do cinema e da televisão, ou ainda no mundo dos videojogos e da publicidade.`,
-                imgUrl: 'https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2017-09/shutterstock_243101992.jpg?itok=sxfMiTsD',
+                name: 'Anunnamu',
+                role: 'Motion design.',
+                description: `In this project I helped in the construction of all the layout
+ and video animations in addition to all the VFX effects
+implemented in the animation.`,
+                imgUrl: '/team-roles/project-00-00.jpg',
             },
             {
-                name: 'Charles Dawnton',
+                name: 'Nibiru',
                 role: 'CEO',
                 description: `O CEO (Chief Executive Officer) é o principal executivo de uma empresa e desempenha um papel fundamental na definição da visão estratégica e no direcionamento geral da organização. Como líder máximo, o CEO é responsável por tomar decisões estratégicas importantes e garantir o bom funcionamento de todas as áreas da empresa.`,
-                imgUrl: 'https://assets1.cbsnewsstatic.com/hub/i/2018/11/06/0c1af1b8-155a-458e-b105-78f1e7344bf4/2018-11-06t054310z-1334124005-rc1be15a8050-rtrmadp-3-people-sexiest-man.jpg',
+                imgUrl: '/team-roles/project-00-01.jpg',
             },
             {
-                name: 'Harry Hopkins',
+                name: 'Ninma',
                 role: 'Scrum Master',
                 description: `O Scrum Master é um papel dentro da metodologia ágil Scrum, amplamente utilizada no gerenciamento de projetos de desenvolvimento de software. O Scrum Master atua como um facilitador e líder do processo Scrum, garantindo que a equipe siga as práticas e princípios do Scrum.`,
-                imgUrl: 'https://firstpersonarts.org/wp-content/uploads/2021/09/MV5BMzI4ZWMzZTQtNjI1My00ZTQxLTg2MDMtYTUwYTMyN2Y0ZWM4XkEyXkFqcGdeQXVyNjUzMjUyODU@._V1_.jpg',
+                imgUrl: '/team-roles/project-00-02.jpg',
             },
         ]
     },
     {
         id: '01',
-        desktop: "/project-images/01.png",
-        mobile: '/mobile-images/01.jpeg',
+        desktop: "/project-images/01.jpg",
+        mobile: '/mobile-images/01.jpg',
         title: "/title/01.svg",
         gender: 'Design.',
         highlights: 'Design de vídeos, logos e fotos.',
@@ -105,7 +108,7 @@ const projectArray = [
     {
         id: '03',
         desktop: "/project-images/03.jpg",
-        mobile: '/mobile-images/03.jpeg',
+        mobile: '/mobile-images/03.jpg',
         title: "/title/03.svg",
         gender: 'Marketing.',
         highlights: 'Marketing multinível.',
