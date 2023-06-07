@@ -34,7 +34,7 @@ const Navbar = () => {
                                     style={{ marginLeft: 100 }}
                                     onClick={navigateToHome}
                                 >
-                                    Todos os projetos
+                                    All Projects
                                 </Button>
                             )}
                         </Stack>
