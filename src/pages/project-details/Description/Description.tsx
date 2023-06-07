@@ -47,7 +47,7 @@ const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
                 </Stack>
                 <Stack direction={'row'} gap={2} mt={5}>
                     <CustomButton onClick={handleOpenDialog}
-                        children={'Ver Projeto'}
+                        children={'See Project'}
                         variant="outlined"
                         endIcon={<PlayArrowIcon color="primary" />}
                         color="inherit"
@@ -61,7 +61,7 @@ const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
                     <CustomButton
                         onClick={onFavoriteClick}
                         startIcon={favorite ? <FavoriteBorderIcon color='primary' /> : <FavoriteIcon color='primary' />}
-                        children={'Gostei'}
+                        children={'Like'}
                         color='inherit'
                         variant='text'
                         sx={{
