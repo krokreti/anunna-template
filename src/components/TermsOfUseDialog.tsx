@@ -92,7 +92,7 @@ const TermsOfUseDilog = () => {
                     width={'100%'}>
                     <Card
                         sx={{
-                            margin: 2,
+                            margin: isSmallScreen ? 2 : 6,
                             p: 1,
                             zIndex: 2,
                             backgroundColor: '#5A33DB',

@@ -70,6 +70,7 @@ function App() {
         component={"div"}
         onTouchStart={useTouchSlide ? handleTouchStart : () => { }}
         onTouchEnd={useTouchSlide ? handleTouchEnd : () => { }}
+
       >
         <Navbar />
         <Outlet />
