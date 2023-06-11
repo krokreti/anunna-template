@@ -7,6 +7,7 @@ import { backgroundTotal, currentProject, projectActions } from './store/project
 import { useRef, useState, useEffect } from 'react';
 import AnimatedBackground from './components/AnimatedBackground';
 import { Outlet, useLocation } from 'react-router-dom';
+import TermsOfUseDilog from './components/TermsOfUseDialog';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -72,6 +73,7 @@ function App() {
       >
         <Navbar />
         <Outlet />
+        <TermsOfUseDilog />
       </Box>
     </ThemeProvider>
   )
