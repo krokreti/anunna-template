@@ -1,8 +1,9 @@
 import { useLocation, useRoutes } from 'react-router-dom';
+import { AnimatePresence } from "framer-motion";
 import App from '../App';
 import ProjectDetails from '../pages/project-details/ProjectDetails';
 import HomePage from '../pages/home/HomePage';
-import { AnimatePresence } from "framer-motion";
+import PolicyPrivacy from '../pages/policy-privacy/PolicyPrivacy';
 import * as React from 'react';
 
 const Router = () => {
@@ -20,6 +21,10 @@ const Router = () => {
                 {
                     path: '/project-details/:id',
                     element: <ProjectDetails />
+                },
+                {
+                    path: '/policy-privacy',
+                    element: <PolicyPrivacy />
                 },
             ]
         },
