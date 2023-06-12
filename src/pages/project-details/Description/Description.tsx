@@ -13,7 +13,7 @@ const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
     const [favorite, setFavorite] = useState(false);
     const [open, setOpen] = useState(false);
     const mediaQuery = useMediaQuery('(max-width:900px)');
-    console.log(project)
+
     const handleOpenDialog = () => {
         setOpen(true);
     }

@@ -8,12 +8,16 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import LogoAnunna from '../../../public/Logo.svg';
 import CustomInput from '../CustomInput';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../hooks/redux-hooks';
+import { projectActions } from '../../store/project-slice';
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
     const isSmallScreen = useMediaQuery('(max-width:1050px)');
 
     const navigateToHome = () => {
+        dispatch(projectActions.changeProject(0));
         navigate('/');
     }
 
