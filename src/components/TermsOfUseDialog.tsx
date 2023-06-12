@@ -126,7 +126,7 @@ const TermsOfUseDilog = () => {
                             alignItems={isSmallScreen ? 'start' : 'end'}
                         >
                             <Link
-                                to={'/'}
+                                to={'/policy-privacy'}
                                 style={{ color: 'white', fontWeight: 'bold', }}
                             >
                                 Privacy Policy
