@@ -37,11 +37,12 @@ const ProjectVideo = () => {
                     sx={{
                         border: '10px solid grey',
                         borderRadius: 40,
-                        p: 1
+                        p: 1.5,
+                        height: '6em'
                     }}
                     onClick={handleOpenDialog}
                 >
-                    <PlayArrowIcon sx={{ color: '#161616', fontSize: 30 }} />
+                    <PlayArrowIcon sx={{ color: '#161616', fontSize: 40 }} />
                 </Button>
                 <VideoDialog open={open} close={handleCloseDialog} videoUrl='twermV6UDmQ' />
             </Box>

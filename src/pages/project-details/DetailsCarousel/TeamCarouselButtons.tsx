@@ -14,7 +14,7 @@ const TeamCarouselButtons: React.FC<{ swiperRef: any, currentSlide: number, tota
     }
 
     return (
-        <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} alignItems={'center'} mr={4} component={"div"}>
+        <Box display={'flex'} justifyContent={'end'} height={'4.5em'} flexDirection={'column'} alignItems={'center'} mr={4} component={"div"} >
             <Stack direction={'row'} spacing={2}>
                 <CustomButton onClick={prevSlide} variant='outlined' color='inherit' sx={{ borderRadius: 20, px: 1, py: 0.1, border: '2px solid' }} disabled={props.currentSlide == 0}>
                     <ArrowLeftIcon color='primary' sx={{ fontSize: '3em' }} />

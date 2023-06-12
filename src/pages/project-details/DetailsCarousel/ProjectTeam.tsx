@@ -30,8 +30,8 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
             exit={{ opacity: 0, y: 200, transition: { duration: 1 } }}
             transition={{ duration: 1 }}
         >
-            <Box component={'div'} >
-                <Stack direction={'column'} >
+            <Box flexDirection={'column'} component={"div"} height={'100%'} display={'flex'} justifyContent={'end'} >
+                <Stack direction={'column'} display={'flex'} justifyContent={'end'}>
                     <Typography variant="h6" fontWeight={'bold'} mb={3}> Project Team: </Typography>
                     <TeamCarousel roles={project.roles} swiper={swiper} handleSlideChange={handleSlideChange} />
                     <Stack direction={'row'} my={3} >
@@ -42,13 +42,15 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
                             <hr />
                         </Box>
                     </Stack>
-                    <Typography variant="h6" fontWeight={'bold'}> Role: </Typography>
-                    <Typography variant="h6" color={theme.palette.text.secondary} style={{ fontSize: 16 }}>
+                    <Typography variant="h6" fontWeight={'bold'} > Role: </Typography>
+                    <Typography variant="h6" color={theme.palette.text.secondary} style={{ fontSize: 16 }} >
                         {activeRole.role}
                     </Typography>
-                    <Typography variant="h6" style={{ fontSize: 16 }} mr={6} mt={3}>
-                        {activeRole.description}
-                    </Typography>
+                    <Box component={'div'} height={'12em'}>
+                        <Typography variant="h6" style={{ fontSize: 16 }} mr={6} mt={3} lineHeight={2.5}>
+                            {activeRole.description}
+                        </Typography>
+                    </Box>
                 </Stack>
             </Box>
         </motion.div>
