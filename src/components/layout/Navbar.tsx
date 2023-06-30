@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { projectActions } from '../../store/project-slice';
 import WhoWeAre from '../WhoWeAre';
+import Contacts from '../Contacts';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -18,6 +19,7 @@ const Navbar = () => {
     const dispatch = useAppDispatch();
     const isSmallScreen = useMediaQuery('(max-width:1220px)');
     const [openWhoWeAre, setOpenWhoWeAre] = useState<boolean>(false);
+    const [openContacts, setOpenContacts] = useState<boolean>(false);
     const navigateToHome = () => {
         dispatch(projectActions.changeProject(0));
         navigate('/');
@@ -25,6 +27,10 @@ const Navbar = () => {
 
     const openWhoWeAreHandler = () => {
         setOpenWhoWeAre(!openWhoWeAre);
+    }
+
+    const openContactsHandler = () => {
+        setOpenContacts(!openContacts);
     }
 
     return (
@@ -53,7 +59,7 @@ const Navbar = () => {
                                 <>
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>Blog</Button>
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={openWhoWeAreHandler}>Who we are?</Button>
-                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>Contact</Button>
+                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={openContactsHandler}>Contact</Button>
                                     {/* <Avatar sx={{ bgcolor: theme.palette.text.primary, mr: 6 }}> D </Avatar> */}
                                     <CustomInput />
                                     <IconButton
@@ -81,6 +87,7 @@ const Navbar = () => {
                 </Toolbar>
             </AppBar>
             <WhoWeAre isClicked={openWhoWeAre} handleClose={openWhoWeAreHandler} />
+            <Contacts isClicked={openContacts} handleClose={openContactsHandler} />
         </Box >
     );
 }
