@@ -48,7 +48,7 @@ const Navbar = () => {
                                 </Button>
                             )}
                         </Stack>
-                        <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={3} >
+                        <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={3}>
                             {!isSmallScreen && (
                                 <>
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>Blog</Button>
@@ -80,7 +80,7 @@ const Navbar = () => {
                     </Stack>
                 </Toolbar>
             </AppBar>
-            <WhoWeAre isClicked={openWhoWeAre} />
+            <WhoWeAre isClicked={openWhoWeAre} handleClose={openWhoWeAreHandler} />
         </Box >
     );
 }
