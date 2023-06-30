@@ -10,15 +10,21 @@ import CustomInput from '../CustomInput';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { projectActions } from '../../store/project-slice';
+import WhoWeAre from '../WhoWeAre';
+import { useState } from 'react';
 
 const Navbar = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
-    const isSmallScreen = useMediaQuery('(max-width:1050px)');
-
+    const isSmallScreen = useMediaQuery('(max-width:1220px)');
+    const [openWhoWeAre, setOpenWhoWeAre] = useState<boolean>(false);
     const navigateToHome = () => {
         dispatch(projectActions.changeProject(0));
         navigate('/');
+    }
+
+    const openWhoWeAreHandler = () => {
+        setOpenWhoWeAre(true);
     }
 
     return (
@@ -42,9 +48,12 @@ const Navbar = () => {
                                 </Button>
                             )}
                         </Stack>
-                        <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={2} >
+                        <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={3} >
                             {!isSmallScreen && (
                                 <>
+                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>Blog</Button>
+                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={openWhoWeAreHandler}>Who we are?</Button>
+                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>Contact</Button>
                                     {/* <Avatar sx={{ bgcolor: theme.palette.text.primary, mr: 6 }}> D </Avatar> */}
                                     <CustomInput />
                                     <IconButton
@@ -71,6 +80,7 @@ const Navbar = () => {
                     </Stack>
                 </Toolbar>
             </AppBar>
+            <WhoWeAre isClicked={openWhoWeAre} />
         </Box >
     );
 }
