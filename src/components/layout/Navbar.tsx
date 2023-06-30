@@ -24,7 +24,7 @@ const Navbar = () => {
     }
 
     const openWhoWeAreHandler = () => {
-        setOpenWhoWeAre(true);
+        setOpenWhoWeAre(!openWhoWeAre);
     }
 
     return (
