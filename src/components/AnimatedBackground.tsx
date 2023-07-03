@@ -96,7 +96,11 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
             zIndex: -1,
             height: '100vh',
             width: '100%',
-            position: 'absolute'
+            position: 'absolute',
+            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
         }}>
             <Canvas flat camera={{ fov: 75, position: [0, 0, 2] }} >
                 <FadingImage currentBackground={props.background} nextBackground={props.nextBackground} />
