@@ -17,7 +17,7 @@ import { useState } from 'react';
 const Navbar = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
-    const isSmallScreen = useMediaQuery('(max-width:1220px)');
+    const isSmallScreen = useMediaQuery('(max-width:1350px)');
     const [openWhoWeAre, setOpenWhoWeAre] = useState<boolean>(false);
     const [openContacts, setOpenContacts] = useState<boolean>(false);
     const navigateToHome = () => {
@@ -69,7 +69,7 @@ const Navbar = () => {
                                         aria-label="search"
                                         sx={{ mx: 2 }}
                                     >
-                                        <SearchIcon sx={{ fontSize: 45 }} />
+                                        <SearchIcon sx={{ fontSize: 45, ml: 8 }} />
                                     </IconButton>
                                 </>
                             )}
