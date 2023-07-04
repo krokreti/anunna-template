@@ -26,6 +26,7 @@ const images = {
 const projectArray = [
     {
         id: '00',
+        name: 'Thetryum',
         desktop: "/project-images/00.jpg",
         mobile: '/mobile-images/00.jpg',
         title: "/title/00.svg",
@@ -61,12 +62,13 @@ implemented in the animation.`,
     },
     {
         id: '01',
+        name: 'Project in Construction',
         desktop: "/project-images/01.jpg",
         mobile: '/mobile-images/01.jpg',
         title: "/title/01.svg",
         gender: 'Design.',
         highlights: 'Video design and branding.',
-        description: '',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         roles: [
             {
                 name: 'Nome 1',
@@ -84,12 +86,13 @@ implemented in the animation.`,
     },
     {
         id: '02',
+        name: 'Project in Construction',
         desktop: "/project-images/02.jpg",
         mobile: '/mobile-images/02.jpg',
         title: "/title/02.svg",
         gender: 'Development.',
         highlights: 'Mobile development, data science.',
-        description: '',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
         roles: [
             {
                 name: 'Nome 1',
@@ -107,12 +110,13 @@ implemented in the animation.`,
     },
     {
         id: '03',
+        name: 'Project in Construction',
         desktop: "/project-images/03.jpg",
         mobile: '/mobile-images/03.jpg',
         title: "/title/03.svg",
         gender: 'Ads.',
         highlights: 'Market of advertisiment.',
-        description: '',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
         roles: [
             {
                 name: 'Nome 1',

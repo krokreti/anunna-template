@@ -2,6 +2,7 @@ import Role from "./Role";
 
 type PortfolioType = {
     id: string;
+    name: string;
     desktop: string;
     mobile: string;
     title: string;
