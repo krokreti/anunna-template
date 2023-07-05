@@ -1,5 +1,4 @@
 import LanguageIcon from '@mui/icons-material/Language';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Tooltip, IconButton, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 
