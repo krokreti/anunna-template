@@ -10,6 +10,7 @@ import WhoWeAre from '../WhoWeAre';
 import Contacts from '../Contacts';
 import { useState } from 'react';
 import AllProjectsButton from './AllProjectsButton';
+import TranslateComponent from './TranslateComponent';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -44,6 +45,7 @@ const Navbar = () => {
                         <Stack direction={'row'} display={'flex'} alignItems={'center'} spacing={3}>
                             {!isSmallScreen && (
                                 <>
+                                    <TranslateComponent />
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>Blog</Button>
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={openWhoWeAreHandler}>Who we are?</Button>
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={openContactsHandler}>Contact</Button>

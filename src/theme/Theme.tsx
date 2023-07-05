@@ -22,6 +22,7 @@ let mainTheme = createTheme({
         main: 'transparent',
     },
     palette: {
+        mode: 'dark',
         primary: {
             main: '#5A33DB',
         },
