@@ -51,21 +51,25 @@ const CustomDrawer = () => {
                         <ListItemText primary={'Contact'} />
                     </ListItemButton>
                 </ListItem>
-                <ListItem disablePadding onClick={() => { navigateHandler('/') }}>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <InstagramIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'Instagram'} />
-                    </ListItemButton>
+                <ListItem disablePadding >
+                    <a href="https://www.instagram.com/anunna888/ " target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <InstagramIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={'Instagram'} />
+                        </ListItemButton>
+                    </a>
                 </ListItem>
-                <ListItem disablePadding onClick={() => { navigateHandler('/') }}>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <TwitterIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'Twitter'} />
-                    </ListItemButton>
+                <ListItem disablePadding >
+                    <a href="https://twitter.com/anunna888 " target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <TwitterIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={'Twitter'} />
+                        </ListItemButton>
+                    </a>
                 </ListItem>
             </List>
             <Divider />
