@@ -7,6 +7,7 @@ import PolicyPrivacy from '../pages/policy-privacy/PolicyPrivacy';
 import WhoWeAre from '../pages/who-we-are/WhoWeAre';
 import Contact from '../pages/contact/Contact';
 import * as React from 'react';
+import DetailsLayout from '../components/layout/DetailsLayout';
 
 const Router = () => {
     const location = useLocation();
@@ -28,16 +29,23 @@ const Router = () => {
                     path: '/policy-privacy',
                     element: <PolicyPrivacy />
                 },
+
+            ]
+        },
+        {
+            path: '/details',
+            element: <DetailsLayout />,
+            children: [
                 {
-                    path: '/who-we-are',
+                    path: '/details/who-we-are',
                     element: <WhoWeAre />
                 },
                 {
-                    path: '/contacts',
+                    path: '/details/contacts',
                     element: <Contact />
                 },
             ]
-        },
+        }
     ])
 
     if (!element) return null;

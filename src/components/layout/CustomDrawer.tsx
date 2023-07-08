@@ -35,15 +35,15 @@ const CustomDrawer = () => {
             </Stack>
             <Divider />
             <List>
-                <ListItem disablePadding onClick={() => { navigateHandler('/who-we-are') }}>
+                <ListItem disablePadding onClick={() => { navigateHandler('/details/who-we-are') }}>
                     <ListItemButton>
                         <ListItemIcon>
                             <Groups2Icon />
                         </ListItemIcon>
-                        <ListItemText primary={'Who we are?'} />
+                        <ListItemText primary={'Our Team'} />
                     </ListItemButton>
                 </ListItem>
-                <ListItem disablePadding onClick={() => { navigateHandler('/contacts') }}>
+                <ListItem disablePadding onClick={() => { navigateHandler('/details/contacts') }}>
                     <ListItemButton>
                         <ListItemIcon>
                             <ContactsIcon />

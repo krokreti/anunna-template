@@ -1,13 +1,13 @@
-import { AppBar, Button, Stack, useMediaQuery, Box, Toolbar, IconButton } from '@mui/material';
-import LogoAnunna from '../../../public/Logo.svg';
+import { AppBar, Button, Stack, useMediaQuery, Box, Toolbar } from '@mui/material';
+import LogoAnunna from '/public/Logo.svg';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { projectActions } from '../../store/project-slice';
 import AllProjectsButton from './AllProjectsButton';
 import TranslateComponent from './TranslateComponent';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import CustomDrawer from './CustomDrawer';
+import InstagramLogo from '/public/instagram.png';
+import TwitterLogo from '/public/twitter.png';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -34,24 +34,14 @@ const Navbar = () => {
                                 <>
                                     <TranslateComponent />
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>Blog</Button>
-                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/who-we-are') }}>Who we are?</Button>
-                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/contacts') }}>Contact</Button>
-                                    <IconButton
-                                        size="large"
-                                        edge="start"
-                                        color="inherit"
-                                        aria-label="menu"
-                                    >
-                                        <TwitterIcon />
-                                    </IconButton>
-                                    <IconButton
-                                        size="large"
-                                        edge="start"
-                                        color="inherit"
-                                        aria-label="menu"
-                                    >
-                                        <InstagramIcon />
-                                    </IconButton>
+                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/details/who-we-are') }}>Our Team</Button>
+                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/details/contacts') }}>Contact</Button>
+                                    <a href="https://twitter.com/anunna888 " target="_blank" rel="noopener noreferrer" style={{ textTransform: 'none' }}>
+                                        <img src={TwitterLogo} alt="Twitter" width={25} />
+                                    </a>
+                                    <a href="https://www.instagram.com/anunna888/ " target="_blank" rel="noopener noreferrer">
+                                        <img src={InstagramLogo} alt="Instagram" width={25} />
+                                    </a>
                                 </>
                             )}
                             {isSmallScreen && (

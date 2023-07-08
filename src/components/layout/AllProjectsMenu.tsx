@@ -19,7 +19,6 @@ const itemVariants: Variants = {
 
 const AllProjectsMenu: React.FC<AllProjectsType> = ({ isOpen }) => {
     const listOfProjects = useAppSelector(projectsArray);
-    console.log(listOfProjects);
 
     return (
         <motion.nav
@@ -27,6 +26,7 @@ const AllProjectsMenu: React.FC<AllProjectsType> = ({ isOpen }) => {
             animate={isOpen ? "open" : "closed"}
             className="menu"
         >
+
             <Box
                 component={'div'}
                 position={'absolute'}
@@ -62,6 +62,7 @@ const AllProjectsMenu: React.FC<AllProjectsType> = ({ isOpen }) => {
                         bgcolor={'#3C3C3C'}
                         borderRadius={'20px'}
                         p={0.3}
+                        border={'1px solid red'}
                     >
 
                         {listOfProjects.map((project) => (
