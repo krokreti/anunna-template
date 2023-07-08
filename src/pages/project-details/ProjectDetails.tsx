@@ -21,7 +21,9 @@ const ProjectDetails = () => {
                             <Description project={project} />
                         </Grid>
                         <Grid item xs={12} md={2} pb={6} zIndex={1} >
-                            <ProjectVideo />
+                            {project.isActive && (
+                                <ProjectVideo />
+                            )}
                         </Grid>
                         <Grid item xs={12} md={5} pb={6} zIndex={1} pl={mediaQuery ? 3 : 0} >
                             {project.isActive && (
