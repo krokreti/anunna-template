@@ -43,7 +43,9 @@ const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
                 </Stack>
                 <Stack marginY={4}>
                     <Typography variant="h4" fontWeight={'bold'} display={'flex'} alignItems={'center'} lineHeight={2.5}> Description:</Typography>
-                    <Typography variant="h6" display={'flex'} alignItems={'center'} style={{ fontSize: 16 }} lineHeight={2.5}>{project.description}</Typography>
+                    {project.isActive && (
+                        <Typography variant="h6" display={'flex'} alignItems={'center'} style={{ fontSize: 16 }} lineHeight={2.5}>{project.description}</Typography>
+                    )}
                 </Stack>
                 <Stack direction={'row'} gap={2} mt={5}>
                     <CustomButton onClick={handleOpenDialog}
@@ -51,6 +53,7 @@ const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
                         variant="outlined"
                         endIcon={<PlayArrowIcon color="primary" />}
                         color="inherit"
+                        disabled={!project.isActive}
                         sx={{
                             textTransform: 'none',
                             px: 4,
@@ -64,6 +67,7 @@ const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
                         children={'Like'}
                         color='inherit'
                         variant='text'
+                        disabled={!project.isActive}
                         sx={{
                             textTransform: 'none',
                             px: 4,

@@ -4,6 +4,8 @@ import App from '../App';
 import ProjectDetails from '../pages/project-details/ProjectDetails';
 import HomePage from '../pages/home/HomePage';
 import PolicyPrivacy from '../pages/policy-privacy/PolicyPrivacy';
+import WhoWeAre from '../pages/who-we-are/WhoWeAre';
+import Contact from '../pages/contact/Contact';
 import * as React from 'react';
 
 const Router = () => {
@@ -25,6 +27,14 @@ const Router = () => {
                 {
                     path: '/policy-privacy',
                     element: <PolicyPrivacy />
+                },
+                {
+                    path: '/who-we-are',
+                    element: <WhoWeAre />
+                },
+                {
+                    path: '/contacts',
+                    element: <Contact />
                 },
             ]
         },

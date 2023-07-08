@@ -36,7 +36,7 @@ const Portfolio = () => {
             transition={{ duration: 1 }}
         >
             <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} component={"div"} >
-                <Typography variant="h4" fontWeight={'bold'} mb={8} >Portfolio</Typography>
+                <Typography variant="h4" fontWeight={'bold'} mb={8} hidden>Portfolio</Typography>
                 <Stack direction={'row'} display={'flex'} alignItems={'center'} gap={2} width={'100%'} mt={4}>
                     <img src={project.title} alt="thetryum" width={mediaQuery ? 270 : 500} />
                 </Stack>

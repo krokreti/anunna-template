@@ -37,6 +37,7 @@ global growth through inspiring videos.
 Featuring partner Anunna and her immersive site blocking experience,
 along with captivating artwork on Thetryum social media.
 Explore this journey of success, innovation and creativity in technology.`,
+        isActive: true,
         roles: [
             {
                 name: 'Anunnamu',
@@ -66,9 +67,10 @@ implemented in the animation.`,
         desktop: "/project-images/01.jpg",
         mobile: '/mobile-images/01.jpg',
         title: "/title/01.svg",
-        gender: 'Design.',
+        gender: 'In construction.',
         highlights: 'Video design and branding.',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        isActive: false,
         roles: [
             {
                 name: 'Nome 1',
@@ -93,6 +95,7 @@ implemented in the animation.`,
         gender: 'Development.',
         highlights: 'Mobile development, data science.',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+        isActive: false,
         roles: [
             {
                 name: 'Nome 1',
@@ -117,6 +120,7 @@ implemented in the animation.`,
         gender: 'Ads.',
         highlights: 'Market of advertisiment.',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+        isActive: false,
         roles: [
             {
                 name: 'Nome 1',

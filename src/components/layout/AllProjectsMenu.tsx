@@ -65,8 +65,11 @@ const AllProjectsMenu: React.FC<AllProjectsType> = ({ isOpen }) => {
                     >
 
                         {listOfProjects.map((project) => (
-                            <motion.li variants={itemVariants}><ProjectItem project={project} key={project.id} /> </motion.li>
-
+                            <>
+                                {project.isActive && (
+                                    <motion.li variants={itemVariants}><ProjectItem project={project} key={project.id} /> </motion.li>
+                                )}
+                            </>
                         ))}
                     </Box>
                 </motion.ul>

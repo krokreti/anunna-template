@@ -7,7 +7,7 @@ type WhoWeAreProps = {
     handleClose?: () => void,
 }
 
-const WhoWeAre: React.FC<WhoWeAreProps> = (props) => {
+const WhoWeAreDialog: React.FC<WhoWeAreProps> = (props) => {
 
     return (
         <AnimatePresence >
@@ -128,4 +128,4 @@ const WhoWeAre: React.FC<WhoWeAreProps> = (props) => {
     )
 }
 
-export default WhoWeAre;
+export default WhoWeAreDialog;

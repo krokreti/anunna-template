@@ -8,7 +8,7 @@ type ContactsProps = {
 }
 
 
-const Contacts: React.FC<ContactsProps> = (props) => {
+const ContactsDialog: React.FC<ContactsProps> = (props) => {
     return (
         <AnimatePresence >
             {props.isClicked && (
@@ -104,4 +104,4 @@ const Contacts: React.FC<ContactsProps> = (props) => {
     );
 }
 
-export default Contacts;
+export default ContactsDialog;

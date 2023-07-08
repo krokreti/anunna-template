@@ -24,7 +24,9 @@ const ProjectDetails = () => {
                             <ProjectVideo />
                         </Grid>
                         <Grid item xs={12} md={5} pb={6} zIndex={1} pl={mediaQuery ? 3 : 0} >
-                            <ProjectTeam project={project} />
+                            {project.isActive && (
+                                <ProjectTeam project={project} />
+                            )}
                         </Grid>
                     </Grid>
                 </Box>

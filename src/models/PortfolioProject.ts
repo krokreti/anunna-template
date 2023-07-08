@@ -9,6 +9,7 @@ type PortfolioType = {
     gender: string;
     highlights: string;
     description: string;
+    isActive: boolean;
     roles: Role[],
 }
 
