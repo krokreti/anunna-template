@@ -3,6 +3,7 @@ import { motion, Variants } from 'framer-motion';
 import { useAppSelector } from '../../hooks/redux-hooks';
 import { projectsArray } from '../../store/project-slice';
 import ProjectItem from './ProjectItem';
+import { useNavigate } from 'react-router-dom';
 
 type AllProjectsType = {
     isOpen: boolean,
@@ -19,6 +20,11 @@ const itemVariants: Variants = {
 
 const AllProjectsMenu: React.FC<AllProjectsType> = ({ isOpen }) => {
     const listOfProjects = useAppSelector(projectsArray);
+    const navigate = useNavigate();
+
+    const navigateToProject = (id: string) => {
+        navigate(`/project-details/${id}`);
+    }
 
     return (
         <motion.nav
@@ -62,13 +68,14 @@ const AllProjectsMenu: React.FC<AllProjectsType> = ({ isOpen }) => {
                         bgcolor={'#3C3C3C'}
                         borderRadius={'20px'}
                         p={0.3}
-                        border={'1px solid red'}
                     >
 
                         {listOfProjects.map((project) => (
                             <>
                                 {project.isActive && (
-                                    <motion.li variants={itemVariants}><ProjectItem project={project} key={project.id} /> </motion.li>
+                                    <motion.li variants={itemVariants}>
+                                        <ProjectItem project={project} key={project.id} redirect={navigateToProject} />
+                                    </motion.li>
                                 )}
                             </>
                         ))}

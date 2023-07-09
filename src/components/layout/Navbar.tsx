@@ -6,8 +6,8 @@ import { projectActions } from '../../store/project-slice';
 import AllProjectsButton from './AllProjectsButton';
 import TranslateComponent from './TranslateComponent';
 import CustomDrawer from './CustomDrawer';
-import InstagramLogo from '/public/instagram.png';
-import TwitterLogo from '/public/twitter.png';
+import InstagramLogo from '/instagram.png';
+import TwitterLogo from '/twitter.png';
 
 const Navbar = () => {
     const navigate = useNavigate();
