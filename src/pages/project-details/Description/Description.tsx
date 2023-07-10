@@ -7,6 +7,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PdfDialog from '../../../components/PdfDialog';
 import PortfolioType from '../../../models/PortfolioProject';
+import BackButton from '../../../components/BackButton';
 
 const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
     const theme = useTheme();
@@ -34,7 +35,10 @@ const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
             exit={{ opacity: 0, y: 200, transition: { duration: 1 } }}
             transition={{ duration: 1 }}
         >
-            <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} component={"div"} >
+            <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} component={"div"} position={'relative'}>
+                <Box component={'div'} position={'absolute'} top={0}>
+                    <BackButton />
+                </Box>
                 {/* <Typography variant="h3" fontWeight={'bold'}> Thetryum Expansion </Typography> */}
                 <img src={project.title} alt="thetryum" width={mediaQuery ? 270 : 500} />
                 <Stack direction={{ xs: 'column', sm: 'row' }} mt={2} p={0}>

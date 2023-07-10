@@ -15,6 +15,7 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
 
     const swiper = (swiperRef: any) => {
         swiperSlider.current = swiperRef.current;
+        swiperSlider.current.index = 0;
     }
 
     const handleSlideChange = (role: Role, currentSlide: number) => {
@@ -33,10 +34,10 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
             <Box flexDirection={'column'} component={"div"} height={'100%'} display={'flex'} justifyContent={'end'} >
                 <Stack direction={'column'} display={'flex'} justifyContent={'end'}>
                     <Typography variant="h6" fontWeight={'bold'} mb={3}> Project Team: </Typography>
-                    <TeamCarousel roles={project.roles} swiper={swiper} handleSlideChange={handleSlideChange} />
+                    <TeamCarousel roles={project.roles} swiper={swiper} handleSlideChange={handleSlideChange} currentSlide={currentSlide} />
                     <Stack direction={'row'} my={3} >
                         <Box component={'div'}>
-                            <TeamCarouselButtons swiperRef={swiperSlider} currentSlide={currentSlide} totalSlides={totalSlides} />
+                            <TeamCarouselButtons swiperRef={swiperSlider} currentSlide={currentSlide} totalSlides={totalSlides} roles={project.roles} handleSlideChange={handleSlideChange} />
                         </Box>
                         <Box component={'div'} width={'100%'} height={'100%'} margin={'auto 0'} pr={5}>
                             <hr />

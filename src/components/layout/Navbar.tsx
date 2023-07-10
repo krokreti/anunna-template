@@ -1,4 +1,4 @@
-import { AppBar, Button, Stack, useMediaQuery, Box, Toolbar } from '@mui/material';
+import { AppBar, Button, Stack, useMediaQuery, Box, Toolbar, Tooltip } from '@mui/material';
 import LogoAnunna from '/public/Logo.svg';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/redux-hooks';
@@ -36,28 +36,20 @@ const Navbar = () => {
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>Blog</Button>
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/details/who-we-are') }}>Our Team</Button>
                                     <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/details/contacts') }}>Contact</Button>
-                                    <a href="https://twitter.com/anunna888 " target="_blank" rel="noopener noreferrer" style={{ textTransform: 'none' }}>
-                                        <img src={TwitterLogo} alt="Twitter" width={25} />
-                                    </a>
-                                    <a href="https://www.instagram.com/anunna888/ " target="_blank" rel="noopener noreferrer">
-                                        <img src={InstagramLogo} alt="Instagram" width={25} />
-                                    </a>
+                                    <Tooltip title={"Twitter"}>
+                                        <a href="https://twitter.com/anunna888 " target="_blank" rel="noopener noreferrer" style={{ textTransform: 'none' }}>
+                                            <img src={TwitterLogo} alt="Twitter" width={25} />
+                                        </a>
+                                    </Tooltip>
+                                    <Tooltip title={"Instagram"}>
+                                        <a href="https://www.instagram.com/anunna888/ " target="_blank" rel="noopener noreferrer">
+                                            <img src={InstagramLogo} alt="Instagram" width={25} />
+                                        </a>
+                                    </Tooltip>
                                 </>
                             )}
                             {isSmallScreen && (
-                                <>
-                                    {/* <CustomInput />
-                                    <IconButton
-                                        size="large"
-                                        edge="start"
-                                        color="inherit"
-                                        aria-label="search"
-                                        sx={{ mx: 2 }}
-                                    >
-                                        <SearchIcon sx={{ fontSize: 45, ml: 8 }} />
-                                    </IconButton> */}
-                                    <CustomDrawer />
-                                </>
+                                <CustomDrawer />
                             )}
                         </Stack>
                     </Stack>

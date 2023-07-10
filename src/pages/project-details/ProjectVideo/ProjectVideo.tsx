@@ -33,12 +33,17 @@ const ProjectVideo = () => {
             >
                 <Button
                     variant="contained"
-                    color="inherit"
                     sx={{
                         border: '10px solid grey',
                         borderRadius: 40,
                         p: 1.5,
-                        height: '6em'
+                        height: '6em',
+                        bgcolor: '#F2F2F7',
+                        opacity: '.8',
+                        "&:hover": {
+                            bgcolor: '#F2F2F7',
+                            opacity: '1'
+                        }
                     }}
                     onClick={handleOpenDialog}
                 >

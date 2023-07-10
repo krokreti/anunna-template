@@ -2,15 +2,33 @@ import { Stack, Box } from '@mui/material'
 import CustomButton from '../../../components/CustomButton';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import Role from "../../../models/Role";
 
-const TeamCarouselButtons: React.FC<{ swiperRef: any, currentSlide: number, totalSlides: number }> = (props) => {
+const TeamCarouselButtons: React.FC<{
+    swiperRef: any,
+    currentSlide: number,
+    totalSlides: number,
+    roles: Role[],
+    handleSlideChange: (role: Role, currentIndex: number,) => void,
+}> = (props) => {
+    var index = props.currentSlide;
 
     const nextSlide = () => {
-        props.swiperRef.current.slideNext();
+        // props.swiperRef.current.slideNext();
+        if (props.currentSlide != (props.totalSlides - 1)) {
+            index = index + 1;
+            const activeRole = props.roles[index];
+            props.handleSlideChange(activeRole, index);
+        }
     }
 
     const prevSlide = () => {
-        props.swiperRef.current.slidePrev();
+        // props.swiperRef.current.slidePrev();
+        if (props.currentSlide != 0) {
+            index = index - 1;
+            const activeRole = props.roles[index];
+            props.handleSlideChange(activeRole, index);
+        }
     }
 
     return (
