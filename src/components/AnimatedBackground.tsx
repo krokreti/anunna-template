@@ -98,11 +98,12 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
     //         backgroundSize: 'cover',
     // height: '100vh',
     //     width: '100%',
+    // height: (mediaQuery ? '100vh' : '1080px'),
     return (
         <div style={{
             zIndex: -1,
-            height: (mediaQuery ? '100vh' : '1080px'),
             width: '100%',
+            height: (mediaQuery ? '100vh' : '1080px'),
             position: 'absolute',
             backgroundAttachment: 'fixed',
             backgroundSize: 'cover',
