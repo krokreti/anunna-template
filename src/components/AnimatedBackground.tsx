@@ -93,23 +93,16 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
         )
     }
 
-    // backgroundPosition: 'center',
-    //     backgroundRepeat: 'no-repeat',
-    //         backgroundSize: 'cover',
-    // height: '100vh',
-    //     width: '100%',
-    // height: (mediaQuery ? '100vh' : '1080px'),
     return (
         <div style={{
             zIndex: -1,
             width: '100%',
-            height: (mediaQuery ? '100vh' : '1080px'),
+            height: '100vh',
             position: 'absolute',
             backgroundAttachment: 'fixed',
-            backgroundSize: 'cover',
+            backgroundSize: '100% auto',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-
+            backgroundPosition: 'center center',
         }}>
 
             <Canvas flat camera={{ fov: 75, position: [0, 0, 2] }} >
