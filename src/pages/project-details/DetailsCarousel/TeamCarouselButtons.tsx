@@ -10,6 +10,7 @@ const TeamCarouselButtons: React.FC<{
     totalSlides: number,
     roles: Role[],
     handleSlideChange: (role: Role, currentIndex: number,) => void,
+    buttonSlide: (role: Role, currentIndex: number, next: boolean) => void,
 }> = (props) => {
     var index = props.currentSlide;
 
@@ -18,7 +19,7 @@ const TeamCarouselButtons: React.FC<{
         if (props.currentSlide != (props.totalSlides - 1)) {
             index = index + 1;
             const activeRole = props.roles[index];
-            props.handleSlideChange(activeRole, index);
+            props.buttonSlide(activeRole, index, true);
         }
     }
 
@@ -27,7 +28,7 @@ const TeamCarouselButtons: React.FC<{
         if (props.currentSlide != 0) {
             index = index - 1;
             const activeRole = props.roles[index];
-            props.handleSlideChange(activeRole, index);
+            props.buttonSlide(activeRole, index, false);
         }
     }
 

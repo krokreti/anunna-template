@@ -36,7 +36,7 @@ const Description: React.FC<{ project: PortfolioType }> = ({ project }) => {
             transition={{ duration: 1 }}
         >
             <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} component={"div"} position={'relative'}>
-                <Box component={'div'} position={'absolute'} top={0}>
+                <Box component={'div'} position={mediaQuery ? 'relative' : 'absolute'} top={0}>
                     <BackButton />
                 </Box>
                 {/* <Typography variant="h3" fontWeight={'bold'}> Thetryum Expansion </Typography> */}

@@ -21,6 +21,17 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
     const handleSlideChange = (role: Role, currentSlide: number) => {
         setActiveRole(role);
         setCurrentSlide(currentSlide);
+        console.log(swiperSlider.current)
+    }
+
+    const handleSlideNext = (role: Role, currentSlide: number, next: boolean) => {
+        setActiveRole(role);
+        setCurrentSlide(currentSlide);
+        if (next) {
+            swiperSlider.current.slideNext();
+        } else {
+            swiperSlider.current.slidePrev();
+        }
     }
 
     return (
@@ -37,7 +48,7 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
                     <TeamCarousel roles={project.roles} swiper={swiper} handleSlideChange={handleSlideChange} currentSlide={currentSlide} />
                     <Stack direction={'row'} my={3} >
                         <Box component={'div'}>
-                            <TeamCarouselButtons swiperRef={swiperSlider} currentSlide={currentSlide} totalSlides={totalSlides} roles={project.roles} handleSlideChange={handleSlideChange} />
+                            <TeamCarouselButtons swiperRef={swiperSlider} currentSlide={currentSlide} totalSlides={totalSlides} roles={project.roles} handleSlideChange={handleSlideChange} buttonSlide={handleSlideNext} />
                         </Box>
                         <Box component={'div'} width={'100%'} height={'100%'} margin={'auto 0'} pr={5}>
                             <hr />
