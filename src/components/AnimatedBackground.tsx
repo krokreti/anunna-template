@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, memo } from "react"
 import { Canvas, extend, useFrame, useLoader, useThree } from "@react-three/fiber"
 import { shaderMaterial } from "@react-three/drei"
 import { useLocation } from "react-router-dom"
+import { useMediaQuery } from "@mui/material"
 
 
 type AnimatedBackgroundType = {
@@ -13,6 +14,7 @@ type AnimatedBackgroundType = {
 
 
 const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
+    const mediaQuery = useMediaQuery('(max-width:1000px)');
     const location = useLocation();
     const ImageFadeMaterial: any = shaderMaterial(
         {
@@ -91,17 +93,24 @@ const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
         )
     }
 
+    // backgroundPosition: 'center',
+    //     backgroundRepeat: 'no-repeat',
+    //         backgroundSize: 'cover',
+    // height: '100vh',
+    //     width: '100%',
     return (
         <div style={{
             zIndex: -1,
-            height: '100vh',
+            height: (mediaQuery ? '100vh' : '1080px'),
             width: '100%',
             position: 'absolute',
             backgroundAttachment: 'fixed',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+
         }}>
+
             <Canvas flat camera={{ fov: 75, position: [0, 0, 2] }} >
                 <FadingImage currentBackground={props.background} nextBackground={props.nextBackground} />
             </Canvas>
