@@ -1,10 +1,13 @@
 import { Typography, Box } from "@mui/material";
 import MainCard from "../../components/MainCard";
+import BackButton from "../../components/BackButton";
+
 
 const PolicyPrivacy = () => {
     return (
         <MainCard>
-            <Box component={'div'} display={'flex'} flexDirection={'column'} gap={2}>
+            <BackButton />
+            <Box component={'div'} display={'flex'} flexDirection={'column'} gap={2} mt={3}>
                 <Typography variant="h5" fontWeight={'bold'}>
                     Policy Privacy:
                 </Typography>
