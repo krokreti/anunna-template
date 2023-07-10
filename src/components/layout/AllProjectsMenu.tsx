@@ -70,10 +70,10 @@ const AllProjectsMenu: React.FC<AllProjectsType> = ({ isOpen }) => {
                         p={0.3}
                     >
 
-                        {listOfProjects.map((project) => (
+                        {listOfProjects.map((project, index) => (
                             <>
                                 {project.isActive && (
-                                    <motion.li variants={itemVariants}>
+                                    <motion.li variants={itemVariants} key={index}>
                                         <ProjectItem project={project} key={project.id} redirect={navigateToProject} />
                                     </motion.li>
                                 )}

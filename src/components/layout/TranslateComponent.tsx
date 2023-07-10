@@ -1,8 +1,10 @@
 import LanguageIcon from '@mui/icons-material/Language';
 import { Tooltip, IconButton, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const TranslateComponent = () => {
+    const { i18n } = useTranslation();
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -11,6 +13,11 @@ const TranslateComponent = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleChangeLanguage = (language: string) => {
+        i18n.changeLanguage(language);
+        setAnchorEl(null);
+    }
 
     return (<>
 
@@ -29,8 +36,8 @@ const TranslateComponent = () => {
             color='black'
 
         >
-            <MenuItem onClick={handleClose}>Português</MenuItem>
-            <MenuItem onClick={handleClose}>English</MenuItem>
+            <MenuItem onClick={() => { handleChangeLanguage('pt') }}>Português</MenuItem>
+            <MenuItem onClick={() => { handleChangeLanguage('en') }}>English</MenuItem>
         </Menu>
     </>)
 }

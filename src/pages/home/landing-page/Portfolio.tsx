@@ -7,8 +7,10 @@ import { motion } from "framer-motion";
 import VideoDialog from "../../../components/VideoDialog";
 import { currentProject } from '../../../store/project-slice';
 import { useAppSelector } from '../../../hooks/redux-hooks';
+import { useTranslation } from 'react-i18next';
 
 const Portfolio = () => {
+    const [t] = useTranslation();
     const navigate = useNavigate();
     const theme = useTheme();
     const mediaQuery = useMediaQuery('(max-width:900px)');
@@ -37,6 +39,8 @@ const Portfolio = () => {
         >
             <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} component={"div"} >
                 <Typography variant="h4" fontWeight={'bold'} mb={8} hidden>Portfolio</Typography>
+                <Typography variant="h4" fontWeight={'bold'} mb={8} hidden>{t('welcome.title')}</Typography>
+
                 <Stack direction={'row'} display={'flex'} alignItems={'center'} gap={2} width={'100%'} mt={4}>
                     <img src={project.title} alt="thetryum" width={mediaQuery ? 270 : 500} />
                 </Stack>
