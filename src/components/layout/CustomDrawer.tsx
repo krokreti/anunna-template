@@ -6,9 +6,12 @@ import Groups2Icon from '@mui/icons-material/Groups2';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import PolicyIcon from '@mui/icons-material/Policy';
 import LogoPretoAnunna from '../../../public/Logo-branco.svg';
+import { useTranslation } from 'react-i18next';
 
 const CustomDrawer = () => {
+    const { t } = useTranslation()
     const navigate = useNavigate();
     const [openDrawer, setOpenDrawer] = useState<boolean>();
     const theme = useTheme();
@@ -40,7 +43,7 @@ const CustomDrawer = () => {
                         <ListItemIcon>
                             <Groups2Icon />
                         </ListItemIcon>
-                        <ListItemText primary={'Our Team'} />
+                        <ListItemText primary={t('navbar.our-team')} />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding onClick={() => { navigateHandler('/details/contacts') }}>
@@ -48,7 +51,7 @@ const CustomDrawer = () => {
                         <ListItemIcon>
                             <ContactsIcon />
                         </ListItemIcon>
-                        <ListItemText primary={'Contact'} />
+                        <ListItemText primary={t('navbar.contact')} />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding >
@@ -57,7 +60,7 @@ const CustomDrawer = () => {
                             <ListItemIcon>
                                 <InstagramIcon />
                             </ListItemIcon>
-                            <ListItemText primary={'Instagram'} />
+                            <ListItemText primary={t('navbar.instagram')} />
                         </ListItemButton>
                     </a>
                 </ListItem>
@@ -67,9 +70,17 @@ const CustomDrawer = () => {
                             <ListItemIcon>
                                 <TwitterIcon />
                             </ListItemIcon>
-                            <ListItemText primary={'Twitter'} />
+                            <ListItemText primary={t('navbar.twitter')} />
                         </ListItemButton>
                     </a>
+                </ListItem>
+                <ListItem disablePadding onClick={() => { navigateHandler('/policy-privacy') }}>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <PolicyIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={t('common.policy-privacy')} />
+                    </ListItemButton>
                 </ListItem>
             </List>
             <Divider />

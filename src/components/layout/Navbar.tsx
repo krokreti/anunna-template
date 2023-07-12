@@ -3,6 +3,7 @@ import LogoAnunna from '/public/Logo.svg';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { projectActions } from '../../store/project-slice';
+import { useTranslation } from 'react-i18next';
 import AllProjectsButton from './AllProjectsButton';
 import TranslateComponent from './TranslateComponent';
 import CustomDrawer from './CustomDrawer';
@@ -10,6 +11,7 @@ import InstagramLogo from '/instagram.png';
 import TwitterLogo from '/twitter.png';
 
 const Navbar = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const isSmallScreen = useMediaQuery('(max-width:1350px)');
@@ -33,15 +35,15 @@ const Navbar = () => {
                             {!isSmallScreen && (
                                 <>
                                     <TranslateComponent />
-                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>Blog</Button>
-                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/details/who-we-are') }}>Our Team</Button>
-                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/details/contacts') }}>Contact</Button>
-                                    <Tooltip title={"Twitter"}>
+                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }}>{t('navbar.blog')}</Button>
+                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/details/who-we-are') }}>{t('navbar.our-team')}</Button>
+                                    <Button variant='text' color='inherit' sx={{ textTransform: 'none', fontSize: '1.2em', fontWeight: 600 }} onClick={() => { navigate('/details/contacts') }}>{t('navbar.contact')}</Button>
+                                    <Tooltip title={t('navbar.twitter')}>
                                         <a href="https://twitter.com/anunna888 " target="_blank" rel="noopener noreferrer" style={{ textTransform: 'none' }}>
                                             <img src={TwitterLogo} alt="Twitter" width={25} />
                                         </a>
                                     </Tooltip>
-                                    <Tooltip title={"Instagram"}>
+                                    <Tooltip title={t('navbar.instagram')}>
                                         <a href="https://www.instagram.com/anunna888/ " target="_blank" rel="noopener noreferrer">
                                             <img src={InstagramLogo} alt="Instagram" width={25} />
                                         </a>

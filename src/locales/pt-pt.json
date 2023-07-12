@@ -1,5 +1,40 @@
 {
     "welcome": {
-        "title": "Willkommen bei {{framework}}"
+        "title": "Bem-vindo!"
+    },
+    "navbar": {
+        "all-projects": "Todos os Projetos",
+        "language-settings": "Idioma",
+        "blog": "Blog",
+        "our-team": "Nossa Equipa",
+        "contact": "Contatos",
+        "twitter": "Twitter",
+        "instagram": "Instagram"
+    },
+    "home": {
+        "project-genre": "Gênero de projeto:",
+        "project-highlights": "Destaques do projeto",
+        "view-more": "Ver mais",
+        "Play": "Play",
+        "copyright": "Copyright 2023 Anunna888 - Todos os direitos reservados"
+    },
+    "details": {
+        "project-genre": "Gênero de projeto:",
+        "description": "Descrição:",
+        "project-team": "Equipa do projeto:",
+        "role": "Função:",
+        "see-project": "Ver projeto",
+        "like": "Curtir"
+    },
+    "cookies": {
+        "title": "Este website utiliza cookies.",
+        "website-text": "O nosso website utiliza cookies e outras tecnologias semelhantes para melhorar a funcionalidade e a experiência do utilizador. Você pode ajustar as configurações do seu navegador para desativar cookies, mas isso pode afetar sua experiência de navegação no site."
+    },
+    "common": {
+        "back": "Voltar",
+        "close": "Fechar",
+        "policy-privacy": "Termos de Uso",
+        "agree": "Concordo",
+        "disagree": "Discordo"
     }
 }

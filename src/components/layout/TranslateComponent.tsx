@@ -36,8 +36,8 @@ const TranslateComponent = () => {
             color='black'
 
         >
-            <MenuItem onClick={() => { handleChangeLanguage('pt') }}>Português</MenuItem>
             <MenuItem onClick={() => { handleChangeLanguage('en') }}>English</MenuItem>
+            <MenuItem onClick={() => { handleChangeLanguage('pt') }}>Português</MenuItem>
         </Menu>
     </>)
 }

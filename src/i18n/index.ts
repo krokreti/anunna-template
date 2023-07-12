@@ -1,24 +1,24 @@
 import i18n from "i18next";
-import LanguageDetector from 'i18next-browser-languagedetector'
-import { initReactI18next } from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector';
+import { initReactI18next } from 'react-i18next';
 import EnTranslation from '../locales/en-us.json';
 import PtTranslation from '../locales/pt-pt.json';
 
-export const defaultNS = 'EnTranslation';
+export const defaultNS = 'translation';
 
 const resources = {
     en: {
-        EnTranslation,
+        translation: EnTranslation,
     },
     pt: {
-        PtTranslation,
+        translation: PtTranslation,
     },
 };
 
 const i18nConfig = {
     resources: resources,
     fallbackLng: 'en',
-    lng: 'pt',
+    // lng: 'en',
     defaultNS: defaultNS,
     interpolation: {
         escapeValue: false

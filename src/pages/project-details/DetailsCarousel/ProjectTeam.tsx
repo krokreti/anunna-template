@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 import PortfolioType from "../../../models/PortfolioProject";
 import { useRef, useState } from "react";
 import Role from "../../../models/Role";
+import { useTranslation } from "react-i18next";
 
 const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
+    const { t } = useTranslation();
     const theme = useTheme();
     const swiperSlider = useRef<any>();
     const [activeRole, setActiveRole] = useState<Role>(project.roles[0]);
@@ -44,7 +46,7 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
         >
             <Box flexDirection={'column'} component={"div"} height={'100%'} display={'flex'} justifyContent={'end'} >
                 <Stack direction={'column'} display={'flex'} justifyContent={'end'}>
-                    <Typography variant="h6" fontWeight={'bold'} mb={3}> Project Team: </Typography>
+                    <Typography variant="h6" fontWeight={'bold'} mb={3}> {t('details.project-team')} </Typography>
                     <TeamCarousel roles={project.roles} swiper={swiper} handleSlideChange={handleSlideChange} currentSlide={currentSlide} />
                     <Stack direction={'row'} my={3} >
                         <Box component={'div'}>
@@ -54,7 +56,7 @@ const ProjectTeam: React.FC<{ project: PortfolioType }> = ({ project }) => {
                             <hr />
                         </Box>
                     </Stack>
-                    <Typography variant="h6" fontWeight={'bold'} > Role: </Typography>
+                    <Typography variant="h6" fontWeight={'bold'} > {t('details.role')} </Typography>
                     <Typography variant="h6" color={theme.palette.text.secondary} style={{ fontSize: 16 }} >
                         {activeRole.role}
                     </Typography>

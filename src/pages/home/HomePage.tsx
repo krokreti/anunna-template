@@ -2,9 +2,11 @@ import { Box, Grid, useMediaQuery, Typography, Stack } from "@mui/material";
 import Portfolio from "./landing-page/Portfolio";
 import AnotherCarousel from "./home-carousel/AnotherCarousel";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
     const mediaQuery = useMediaQuery('(max-width:1050px)');
+    const { t } = useTranslation();
     return (
         <Box
             component={"div"}
@@ -18,9 +20,9 @@ const HomePage = () => {
                 <Grid item xs={12} md={7} pb={6} hidden={mediaQuery} >
                     <AnotherCarousel />
                     <Stack direction={'row'} gap={1} position={'absolute'} bottom={0} right={'3%'}>
-                        <Link to={'/policy-privacy'} style={{ color: "white", fontSize: '.8em' }}>PrivacyPolicy</Link>
+                        <Link to={'/policy-privacy'} style={{ color: "white", fontSize: '.8em' }}>{t('common.policy-privacy')}</Link>
                         <Typography>-</Typography>
-                        <Typography color={'secondary'} fontSize={'0.8em'}>Copyright 2023 Anunna888-All rights reserved.</Typography>
+                        <Typography color={'secondary'} fontSize={'0.8em'}>{t('home.copyright')}</Typography>
                     </Stack>
                 </Grid>
             </Grid>

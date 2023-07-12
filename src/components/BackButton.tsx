@@ -1,8 +1,10 @@
-import { IconButton } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const BackButton = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate()
 
     const goBack = () => {
@@ -10,9 +12,11 @@ const BackButton = () => {
     }
 
     return (
-        <IconButton color="primary" onClick={goBack}>
-            <ArrowBackIosNewIcon />
-        </IconButton>
+        <Tooltip title={t('common.back')}>
+            <IconButton color="primary" onClick={goBack}>
+                <ArrowBackIosNewIcon />
+            </IconButton>
+        </Tooltip>
     )
 }
 

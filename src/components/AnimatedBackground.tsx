@@ -3,8 +3,6 @@ import { useEffect, useRef, useState, memo } from "react"
 import { Canvas, extend, useFrame, useLoader, useThree } from "@react-three/fiber"
 import { shaderMaterial } from "@react-three/drei"
 import { useLocation } from "react-router-dom"
-import { useMediaQuery } from "@mui/material"
-
 
 type AnimatedBackgroundType = {
     mediaQuery: boolean,
@@ -14,7 +12,6 @@ type AnimatedBackgroundType = {
 
 
 const AnimatedBackground: React.FC<AnimatedBackgroundType> = memo((props) => {
-    const mediaQuery = useMediaQuery('(max-width:1000px)');
     const location = useLocation();
     const ImageFadeMaterial: any = shaderMaterial(
         {

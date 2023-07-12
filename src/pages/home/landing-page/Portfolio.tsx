@@ -39,21 +39,20 @@ const Portfolio = () => {
         >
             <Box display={'flex'} justifyContent={'end'} height={'100%'} flexDirection={'column'} component={"div"} >
                 <Typography variant="h4" fontWeight={'bold'} mb={8} hidden>Portfolio</Typography>
-                <Typography variant="h4" fontWeight={'bold'} mb={8} hidden>{t('welcome.title')}</Typography>
 
                 <Stack direction={'row'} display={'flex'} alignItems={'center'} gap={2} width={'100%'} mt={4}>
                     <img src={project.title} alt="thetryum" width={mediaQuery ? 270 : 500} />
                 </Stack>
                 <Stack direction={{ xs: 'column', sm: 'row' }} mt={3} p={0}>
-                    <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> Project genre:</Typography>
+                    <Typography variant="h6" fontWeight={'bold'} display={'flex'} alignItems={'center'}> <PlayArrowIcon color="primary" /> {t('home.project-genre')}</Typography>
                     <Typography variant="h6" ml={{ xs: 0, sm: 1 }} color={theme.palette.text.secondary} >{project.gender}</Typography>
                 </Stack>
                 <Stack marginY={6}>
-                    <Typography fontWeight={'bold'} >Project highlights:</Typography>
+                    <Typography fontWeight={'bold'} >{t('home.project-highlights')}</Typography>
                     <Typography color={theme.palette.text.secondary} >{project.highlights}</Typography>
                 </Stack>
                 <Stack direction={{ xs: 'column', sm: 'row' }} gap={2} mt={5}>
-                    <CustomButton onClick={navigateToProject} children={'View More'} sx={{
+                    <CustomButton onClick={navigateToProject} children={t('home.view-more')} sx={{
                         textTransform: 'none',
                         px: 6, py: 1.5,
                         fontSize: '1.2em',

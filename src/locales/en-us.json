@@ -1,5 +1,40 @@
 {
     "welcome": {
         "title": "Welcome to React"
+    },
+    "navbar": {
+        "all-projects": "All Projects",
+        "language-settings": "Language Settings",
+        "blog": "Blog",
+        "our-team": "Our Team",
+        "contact": "Contact",
+        "twitter": "Twitter",
+        "instagram": "Instagram"
+    },
+    "home": {
+        "project-genre": "Project genre:",
+        "project-highlights": "Project highlights",
+        "view-more": "View More",
+        "Play": "Play",
+        "copyright": "Copyright 2023 Anunna888 - All rights reserved."
+    },
+    "details": {
+        "project-genre": "Project genre:",
+        "description": "Description:",
+        "project-team": "Project Team:",
+        "role": "Role:",
+        "see-project": "See Project",
+        "like": "Like"
+    },
+    "cookies": {
+        "title": "This website uses cookies.",
+        "website-text": "Our website uses cookies and other similar technologies to improve functionality and user experience. You can adjust your browser settings to opt out cookies, but this may affect your browsing experience on the site."
+    },
+    "common": {
+        "back": "Go back",
+        "close": "Close",
+        "policy-privacy": "Policy Privacy",
+        "agree": "Agree",
+        "disagree": "Disagree"
     }
 }

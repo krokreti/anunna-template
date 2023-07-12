@@ -1,9 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import CustomButton from './CustomButton';
 import YoutubeVideo from './YoutubeVideo';
 import { Dialog, DialogActions, DialogContent } from "@mui/material";
 
 const VideoDialog: React.FC<{ open: boolean, close: () => void, videoUrl: string }> = ({ open, close, videoUrl }) => {
-
+    const { t } = useTranslation();
     return (
         <Dialog
             open={open}
@@ -15,7 +16,7 @@ const VideoDialog: React.FC<{ open: boolean, close: () => void, videoUrl: string
                 <YoutubeVideo id={videoUrl}></YoutubeVideo>
             </DialogContent>
             <DialogActions>
-                <CustomButton onClick={close} variant='text'>Close</CustomButton>
+                <CustomButton onClick={close} variant='text'>{t('common.close')}</CustomButton>
             </DialogActions>
         </Dialog>
     )
