@@ -51,7 +51,10 @@ const Navbar = () => {
                                 </>
                             )}
                             {isSmallScreen && (
-                                <CustomDrawer />
+                                <>
+                                    <TranslateComponent />
+                                    <CustomDrawer />
+                                </>
                             )}
                         </Stack>
                     </Stack>
