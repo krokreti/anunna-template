@@ -1,25 +1,26 @@
 import BackButton from "../../components/BackButton";
 import MainCard from "../../components/MainCard";
 import { Grid, Typography } from '@mui/material';
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+    const { t } = useTranslation();
     return (<MainCard>
         <BackButton />
         <Grid container maxWidth={'800px'} >
             <Grid item xs={12} sm={12} md={6} p={2}>
                 <Typography>
-                    Jill Wilkie / New Business Manager
+                    {t('common.contact')}
                 </Typography>
                 <Typography >
-
-                    jill@tendril.studio
+                    contact@anunna888.com
                 </Typography>
-                <Typography>
+                {/* <Typography>
 
                     c 514.241.0664
-                </Typography>
+                </Typography> */}
             </Grid>
-            <Grid item xs={12} sm={12} md={6} p={2}>
+            {/* <Grid item xs={12} sm={12} md={6} p={2}>
                 <Typography>
 
                     Mary Anne Ledesma / Executive Producer
@@ -57,7 +58,7 @@ const Contact = () => {
                 <Typography>
                     c 416.809.0732
                 </Typography>
-            </Grid>
+            </Grid> */}
         </Grid>
     </MainCard>)
 }

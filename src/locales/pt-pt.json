@@ -35,6 +35,8 @@
         "close": "Fechar",
         "policy-privacy": "Termos de Uso",
         "agree": "Concordo",
-        "disagree": "Discordo"
+        "disagree": "Discordo",
+        "contact": "Contato",
+        "email": "E-mail"
     }
 }

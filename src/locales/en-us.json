@@ -35,6 +35,8 @@
         "close": "Close",
         "policy-privacy": "Policy Privacy",
         "agree": "Agree",
-        "disagree": "Disagree"
+        "disagree": "Disagree",
+        "contact": "Contact",
+        "email": "E-mail"
     }
 }
